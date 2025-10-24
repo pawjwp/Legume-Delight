@@ -53,7 +53,9 @@ public class LegumeDelight
     // Add the example block item to the building blocks tab
     private void addCreative(BuildCreativeModeTabContentsEvent event)
     {
-        if(event.getTabKey() == CreativeModeTabs.TAB_FARMERS_DELIGHT.getKey())
+        if(event.getTabKey() == ModCreativeTabs.TAB_FARMERS_DELIGHT.getKey()) {
+            event.accept(ModItems.BEANS);
+        }
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call
