@@ -1,6 +1,7 @@
 package net.pawjwp.legumedelight;
 
 import com.mojang.logging.LogUtils;
+import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
@@ -14,7 +15,9 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.ForgeRegistries;
+import net.pawjwp.legumedelight.item.ModItems;
 import org.slf4j.Logger;
+import vectorwing.farmersdelight.common.registry.ModCreativeTabs;
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(LegumeDelight.MOD_ID)
@@ -28,6 +31,8 @@ public class LegumeDelight
     public LegumeDelight(FMLJavaModLoadingContext context)
     {
         IEventBus modEventBus = context.getModEventBus();
+
+        ModItems.register(modEventBus);
 
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
@@ -48,6 +53,7 @@ public class LegumeDelight
     // Add the example block item to the building blocks tab
     private void addCreative(BuildCreativeModeTabContentsEvent event)
     {
+        if(event.getTabKey() == CreativeModeTabs.TAB_FARMERS_DELIGHT.getKey())
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call
