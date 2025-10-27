@@ -1,8 +1,6 @@
 package net.pawjwp.legumedelight;
 
 import com.mojang.logging.LogUtils;
-import net.minecraft.world.item.CreativeModeTabs;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -10,12 +8,11 @@ import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import net.minecraftforge.registries.ForgeRegistries;
-import net.pawjwp.legumedelight.item.ModItems;
+import net.pawjwp.legumedelight.item.LegumeDelightItems;
+import net.pawjwp.legumedelight.block.LegumeDelightBlocks;
 import org.slf4j.Logger;
 import vectorwing.farmersdelight.common.registry.ModCreativeTabs;
 
@@ -32,7 +29,8 @@ public class LegumeDelight
     {
         IEventBus modEventBus = context.getModEventBus();
 
-        ModItems.register(modEventBus);
+        LegumeDelightItems.register(modEventBus);
+        LegumeDelightBlocks.register(modEventBus);
 
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
@@ -50,11 +48,10 @@ public class LegumeDelight
         LOGGER.info("HELLO FROM COMMON SETUP");
     }
 
-    // Add the example block item to the building blocks tab
     private void addCreative(BuildCreativeModeTabContentsEvent event)
     {
         if(event.getTabKey() == ModCreativeTabs.TAB_FARMERS_DELIGHT.getKey()) {
-            event.accept(ModItems.BEANS);
+            LegumeDelightItems.CREATIVE_TAB_ITEMS.forEach(event::accept);
         }
     }
 
