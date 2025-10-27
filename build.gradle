@@ -174,10 +174,15 @@ dependencies {
 
     implementation fg.deobf("maven.modrinth:farmers-delight:${fd_version}")
     implementation fg.deobf("maven.modrinth:cultural-delights:${cd_version}")
+
+    runtimeOnly fg.deobf("maven.modrinth:diet:${diet_version}")
+
     runtimeOnly fg.deobf("mezz.jei:jei-${minecraft_version}-forge:${jei_version}")
+    runtimeOnly fg.deobf("maven.modrinth:appleskin:${appleskin_version}")
+    runtimeOnly fg.deobf("maven.modrinth:jade:${jade_version}")
+    runtimeOnly fg.deobf("maven.modrinth:tag-tooltips:${tagtooltips_version}")
 
     annotationProcessor("org.spongepowered:mixin:0.8.5:processor")
-
 
     // Example mod dependency using a mod jar from ./libs with a flat dir repository
     // This maps to ./libs/coolmod-${mc_version}-${coolmod_version}.jar
