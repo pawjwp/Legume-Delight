@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "tag": "forge:bread"
+    },
+    {
+      "tag": "forge:peanut_butter"
+    },
+    {
+      "tag": "forge:fruits"
+    }
+  ],
+  "result": {
+    "item": "legumedelight:peanut_butter_and_jam_sandwich"
+  }
+}

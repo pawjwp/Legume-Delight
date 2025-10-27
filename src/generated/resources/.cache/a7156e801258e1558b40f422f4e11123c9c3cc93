@@ -1,0 +1,11 @@
+// 1.20.1	2025-10-26T23:40:06.213118	Tags for minecraft:block mod id legumedelight
+ec26fb8a09366ab7d491cea41d773b8927b49a3c data/farmersdelight/tags/blocks/wild_crops.json
+7babed39c08bacc279ed201dfa698e7d0e71cb8c data/forge/tags/blocks/storage_blocks/bean.json
+6e59bce47675b0ef41895a313dfd45c7f6c8c9ca data/forge/tags/blocks/storage_blocks/peanut.json
+f22048d3c73ef94f6bc43486047a8b5eba48215f data/minecraft/tags/blocks/climbable.json
+dc2a117516134a9f6b182a291034220c77481a91 data/minecraft/tags/blocks/crops.json
+dc2a117516134a9f6b182a291034220c77481a91 data/minecraft/tags/blocks/maintains_farmland.json
+b76445554bb3fda5dfbda0e90b20173041500a37 data/minecraft/tags/blocks/mineable/hoe.json
+ec26fb8a09366ab7d491cea41d773b8927b49a3c data/minecraft/tags/blocks/small_flowers.json
+dc2a117516134a9f6b182a291034220c77481a91 data/sereneseasons/tags/blocks/spring_crops.json
+dc2a117516134a9f6b182a291034220c77481a91 data/sereneseasons/tags/blocks/summer_crops.json

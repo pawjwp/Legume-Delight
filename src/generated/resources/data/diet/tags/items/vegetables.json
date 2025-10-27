@@ -1,0 +1,12 @@
+{
+  "remove": [
+    "minecraft:pumpkin_seeds",
+    "minecraft:sunflower"
+  ],
+  "values": [
+    {
+      "id": "culturaldelights:eggplant_parmesian",
+      "required": false
+    }
+  ]
+}

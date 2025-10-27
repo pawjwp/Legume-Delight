@@ -1,0 +1,14 @@
+{
+  "type": "farmersdelight:cooking",
+  "cookingtime": 200,
+  "experience": 0.35,
+  "ingredients": [
+    {
+      "tag": "forge:crops/bean"
+    }
+  ],
+  "recipe_book_tab": "misc",
+  "result": {
+    "item": "legumedelight:refried_beans"
+  }
+}

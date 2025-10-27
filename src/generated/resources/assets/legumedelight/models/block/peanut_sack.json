@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "legumedelight:block/peanut_sack_bottom",
+    "side": "legumedelight:block/peanut_sack_side",
+    "top": "legumedelight:block/peanut_sack_top"
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    [
+      {
+        "tag": "forge:nuts"
+      },
+      {
+        "item": "legumedelight:roasted_peanuts"
+      },
+      {
+        "item": "legumedelight:candied_peanuts"
+      }
+    ],
+    [
+      {
+        "tag": "forge:nuts"
+      },
+      {
+        "item": "legumedelight:roasted_peanuts"
+      },
+      {
+        "item": "legumedelight:candied_peanuts"
+      }
+    ],
+    {
+      "tag": "forge:berries"
+    },
+    [
+      {
+        "tag": "forge:seeds/pumpkin"
+      },
+      {
+        "item": "minecraft:sunflower"
+      },
+      {
+        "item": "minecraft:cocoa_beans"
+      }
+    ]
+  ],
+  "result": {
+    "count": 2,
+    "item": "legumedelight:trail_mix"
+  }
+}

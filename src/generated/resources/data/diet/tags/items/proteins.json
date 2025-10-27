@@ -1,0 +1,10 @@
+{
+  "values": [
+    "legumedelight:beans",
+    "legumedelight:peanuts",
+    {
+      "id": "culturaldelights:eggplant_parmesian",
+      "required": false
+    }
+  ]
+}

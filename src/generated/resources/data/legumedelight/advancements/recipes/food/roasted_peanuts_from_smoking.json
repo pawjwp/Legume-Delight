@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "legumedelight:roasted_peanuts_from_smoking"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "roasted_peanuts": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "legumedelight:peanuts"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "roasted_peanuts",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "legumedelight:roasted_peanuts_from_smoking"
+    ]
+  },
+  "sends_telemetry_event": false
+}

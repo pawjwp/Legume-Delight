@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "age=0": {
+      "model": "legumedelight:block/budding_beans_stage0"
+    },
+    "age=1": {
+      "model": "legumedelight:block/budding_beans_stage1"
+    },
+    "age=2": {
+      "model": "legumedelight:block/budding_beans_stage2"
+    },
+    "age=3": {
+      "model": "legumedelight:block/budding_beans_stage3"
+    },
+    "age=4": {
+      "model": "legumedelight:block/budding_beans_stage3"
+    }
+  }
+}

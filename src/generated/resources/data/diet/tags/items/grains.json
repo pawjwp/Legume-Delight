@@ -1,0 +1,16 @@
+{
+  "values": [
+    {
+      "id": "culturaldelights:corn_cob",
+      "required": false
+    },
+    {
+      "id": "culturaldelights:corn_kernels",
+      "required": false
+    },
+    {
+      "id": "culturaldelights:eggplant_parmesian",
+      "required": false
+    }
+  ]
+}
