@@ -30,6 +30,23 @@ public class LegumeDelightItems {
         return block;
     }
 
+    // Wild Crops
+    public static final RegistryObject<Item> WILD_BEANS = registerWithTab("wild_beans",
+            () -> new BlockItem(LegumeDelightBlocks.WILD_BEANS.get(), basicItem()));
+    public static final RegistryObject<Item> WILD_PEANUTS = registerWithTab("wild_peanuts",
+            () -> new BlockItem(LegumeDelightBlocks.WILD_PEANUTS.get(), basicItem()));
+
+    // Basic Crops
+    public static final RegistryObject<Item> BEANS = registerWithTab("beans",
+			() -> new ItemNameBlockItem(LegumeDelightBlocks.BUDDING_BEAN_CROP.get(), foodItem(LegumeDelightFoodValues.BEANS)));
+    public static final RegistryObject<Item> PEANUTS = registerWithTab("peanuts",
+            () -> new ItemNameBlockItem(LegumeDelightBlocks.PEANUT_CROP.get(), foodItem(LegumeDelightFoodValues.PEANUTS)));;
+
+    // Crop Sacks
+    public static final RegistryObject<Item> BEAN_SACK = registerWithTab("bean_sack",
+            () -> new BlockItem(LegumeDelightBlocks.BEAN_SACK.get(), basicItem()));
+    public static final RegistryObject<Item> PEANUT_SACK = registerWithTab("peanut_sack",
+            () -> new BlockItem(LegumeDelightBlocks.PEANUT_SACK.get(), basicItem()));
 
     // Basic Foods
     public static final RegistryObject<Item> BEAN_PASTE = registerWithTab("bean_paste",
