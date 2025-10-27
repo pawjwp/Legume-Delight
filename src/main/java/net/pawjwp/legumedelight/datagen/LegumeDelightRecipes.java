@@ -17,5 +17,8 @@ public class LegumeDelightRecipes extends RecipeProvider implements IConditionBu
 
     @Override
     protected void buildRecipes(Consumer<FinishedRecipe> consumer) {
+        LegumeDelightCraftingRecipes.register(consumer);
+        LegumeDelightCookingRecipes.register(consumer);
+        LegumeDelightSmeltingRecipes.register(consumer);
     }
 }
