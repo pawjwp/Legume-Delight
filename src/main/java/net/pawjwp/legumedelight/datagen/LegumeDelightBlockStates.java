@@ -36,6 +36,47 @@ public class LegumeDelightBlockStates extends BlockStateProvider {
 
     @Override
     protected void registerStatesAndModels() {
+        this.sackBlock(LegumeDelightBlocks.BEAN_SACK.get(), "bean");
+        this.sackBlock(LegumeDelightBlocks.PEANUT_SACK.get(), "peanut");
 
+        this.wildCropBlock(LegumeDelightBlocks.WILD_BEANS.get());
+        this.wildCropBlock(LegumeDelightBlocks.WILD_PEANUTS.get());
+
+        this.customStageBlock(LegumeDelightBlocks.BUDDING_BEAN_CROP.get(), ResourceLocation.parse("block/cross"), "cross", BuddingBeanBlock.AGE, Arrays.asList(0, 1, 2, 3, 3));
+        this.customStageBlock(LegumeDelightBlocks.PEANUT_CROP.get(), ResourceLocation.parse("block/cross"), "cross", PeanutBlock.AGE, Arrays.asList(0, 0, 1, 1, 2, 2, 3, 3));
+    }
+
+    // Adapted from https://github.com/vectorwing/FarmersDelight/blob/1.20/src/main/java/vectorwing/farmersdelight/data/BlockStates.java
+    public void sackBlock(Block block, String cropName) {
+        this.simpleBlock(block,
+                models().cubeBottomTop(
+                        blockName(block),
+                        resourceBlock(cropName + "_sack_side"),
+                        resourceBlock(cropName + "_sack_bottom"),
+                        resourceBlock(cropName + "_sack_top")
+                )
+        );
+    }
+
+    public void wildCropBlock(Block block) {
+        this.simpleBlock(block,
+                models().cross(
+                        blockName(block),
+                        resourceBlock(blockName(block))).renderType("cutout"));
+    }
+
+    public void customStageBlock(Block block, @Nullable ResourceLocation parent, String textureKey, IntegerProperty ageProperty, List<Integer> suffixes, Property<?>... ignored) {
+        getVariantBuilder(block)
+                .forAllStatesExcept(state -> {
+                    int ageSuffix = state.getValue(ageProperty);
+                    String stageName = blockName(block) + "_stage";
+                    stageName += suffixes.isEmpty() ? ageSuffix : suffixes.get(Math.min(suffixes.size(), ageSuffix));
+                    if (parent == null) {
+                        return ConfiguredModel.builder()
+                                .modelFile(models().cross(stageName, resourceBlock(stageName)).renderType("cutout")).build();
+                    }
+                    return ConfiguredModel.builder()
+                            .modelFile(models().singleTexture(stageName, parent, textureKey, resourceBlock(stageName)).renderType("cutout")).build();
+                }, ignored);
     }
 }
