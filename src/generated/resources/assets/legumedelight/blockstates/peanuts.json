@@ -4,25 +4,25 @@
       "model": "legumedelight:block/peanuts_stage0"
     },
     "age=1": {
-      "model": "legumedelight:block/peanuts_stage0"
+      "model": "legumedelight:block/peanuts_stage1"
     },
     "age=2": {
-      "model": "legumedelight:block/peanuts_stage1"
+      "model": "legumedelight:block/peanuts_stage2"
     },
     "age=3": {
-      "model": "legumedelight:block/peanuts_stage1"
+      "model": "legumedelight:block/peanuts_stage3"
     },
     "age=4": {
-      "model": "legumedelight:block/peanuts_stage2"
+      "model": "legumedelight:block/peanuts_stage4"
     },
     "age=5": {
-      "model": "legumedelight:block/peanuts_stage2"
+      "model": "legumedelight:block/peanuts_stage5"
     },
     "age=6": {
-      "model": "legumedelight:block/peanuts_stage3"
+      "model": "legumedelight:block/peanuts_stage6"
     },
     "age=7": {
-      "model": "legumedelight:block/peanuts_stage3"
+      "model": "legumedelight:block/peanuts_stage7"
     }
   }
 }
