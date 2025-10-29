@@ -5,13 +5,11 @@ import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
-import net.minecraft.world.level.BlockGetter;
-import net.minecraft.world.level.Level;
-import net.minecraft.world.level.LevelAccessor;
-import net.minecraft.world.level.LevelReader;
+import net.minecraft.world.level.*;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.BonemealableBlock;
 import net.minecraft.world.level.block.state.BlockState;
+import net.pawjwp.legumedelight.item.LegumeDelightItems;
 import vectorwing.farmersdelight.common.block.BuddingBushBlock;
 import vectorwing.farmersdelight.common.registry.ModBlocks;
 
@@ -61,6 +59,11 @@ public class BuddingBeanBlock extends BuddingBushBlock implements BonemealableBl
 
     protected int getBonemealAgeIncrease(Level level) {
         return Mth.nextInt(level.random, 1, 4);
+    }
+
+    @Override
+    protected ItemLike getBaseSeedId() {
+        return (ItemLike) LegumeDelightItems.BEANS.get();
     }
 
     @Override
