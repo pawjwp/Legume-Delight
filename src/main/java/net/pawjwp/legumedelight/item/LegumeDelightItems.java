@@ -83,8 +83,8 @@ public class LegumeDelightItems {
             () -> new Item(foodItem(LegumeDelightFoodValues.BEAN_BURRITO)));
     public static final RegistryObject<Item> BEANS_ON_TOAST = registerWithTab("beans_on_toast",
             () -> new Item(foodItem(LegumeDelightFoodValues.BEANS_ON_TOAST)));
-    public static final RegistryObject<Item> NACHOS = registerWithTab("nachos",
-            () -> new Item(foodItem(LegumeDelightFoodValues.NACHOS)));
+    /*public static final RegistryObject<Item> NACHOS = registerWithTab("nachos",
+            () -> new Item(foodItem(LegumeDelightFoodValues.NACHOS)));*/
     public static final RegistryObject<Item> PEANUT_BUTTER_AND_JAM_SANDWICH = registerWithTab("peanut_butter_and_jam_sandwich",
             () -> new Item(foodItem(LegumeDelightFoodValues.PEANUT_BUTTER_AND_JAM_SANDWICH)));
     public static final RegistryObject<Item> POTATO_TACO = registerWithTab("potato_taco",

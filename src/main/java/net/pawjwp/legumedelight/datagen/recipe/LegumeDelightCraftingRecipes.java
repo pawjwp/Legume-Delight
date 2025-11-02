@@ -89,7 +89,7 @@ public class LegumeDelightCraftingRecipes {
                 .unlockedBy("has_bean_paste", InventoryChangeTrigger.TriggerInstance.hasItems(LegumeDelightItems.BEAN_PASTE.get()))
                 .save(consumer);
 
-        ConditionalRecipe.builder()
+        /*ConditionalRecipe.builder()
                 .addCondition(new ModLoadedCondition("culturaldelights"))
                 .addRecipe(c -> ShapelessRecipeBuilder
                         .shapeless(RecipeCategory.FOOD, LegumeDelightItems.NACHOS.get(), 2)
@@ -98,7 +98,7 @@ public class LegumeDelightCraftingRecipes {
                         .requires(LegumeDelightTags.REFRIED_BEANS)
                         .unlockedBy("has_tortilla_chips", InventoryChangeTrigger.TriggerInstance.hasItems(LegumeDelightItems.REFRIED_BEANS.get()))
                         .save(c))
-                .build(consumer, (ResourceLocation.fromNamespaceAndPath(LegumeDelight.MOD_ID, "nachos")));
+                .build(consumer, (ResourceLocation.fromNamespaceAndPath(LegumeDelight.MOD_ID, "nachos")));*/
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, LegumeDelightItems.PEANUT_BAR.get(), 2)
                 .requires(Ingredient.fromValues(Stream.of(

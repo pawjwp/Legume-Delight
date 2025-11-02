@@ -85,7 +85,7 @@ public class LegumeDelightItemTags extends ItemTagsProvider {
                 LegumeDelightItems.BEANS_AND_RICE.get(),
                 LegumeDelightItems.BEANS_ON_TOAST.get(),
                 LegumeDelightItems.CHILI.get(),
-                LegumeDelightItems.NACHOS.get(),
+                //LegumeDelightItems.NACHOS.get(),
                 LegumeDelightItems.PAD_THAI.get(),
                 LegumeDelightItems.PASTA_WITH_TOMATO_SAUCE.get(),
                 LegumeDelightItems.PEANUT_BUTTER_AND_JAM_SANDWICH.get(),

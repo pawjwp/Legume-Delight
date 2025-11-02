@@ -47,8 +47,8 @@ public class LegumeDelightFoodValues {
             .nutrition(12).saturationMod(0.8f).build();
     public static final FoodProperties BEANS_ON_TOAST = (new FoodProperties.Builder())
             .nutrition(4).saturationMod(0.6f).build();
-    public static final FoodProperties NACHOS = (new FoodProperties.Builder())
-            .nutrition(7).saturationMod(0.6f).build();
+    /*public static final FoodProperties NACHOS = (new FoodProperties.Builder())
+            .nutrition(7).saturationMod(0.6f).build();*/
     public static final FoodProperties PEANUT_BUTTER_AND_JAM_SANDWICH = (new FoodProperties.Builder())
             .nutrition(10).saturationMod(0.8f).build();
     public static final FoodProperties POTATO_TACO = (new FoodProperties.Builder())
