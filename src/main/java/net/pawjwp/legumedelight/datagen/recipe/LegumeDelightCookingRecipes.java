@@ -29,7 +29,7 @@ public class LegumeDelightCookingRecipes {
                 .addIngredient(LegumeDelightTags.CROPS_BEAN)
                 .addIngredient(LegumeDelightTags.CROPS_BEAN)
                 .addIngredient(ModItems.TOMATO_SAUCE.get())
-                .unlockedByAnyIngredient(LegumeDelightItems.BEANS.get(), ModItems.TOMATO_SAUCE.get(), ModItems.ONION.get())
+                .unlockedByAnyIngredient(LegumeDelightItems.BEANS.get(), ModItems.TOMATO_SAUCE.get())
                 .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
                 .build(consumer);
 
@@ -40,13 +40,10 @@ public class LegumeDelightCookingRecipes {
                 .setRecipeBookTab(CookingPotRecipeBookTab.MISC)
                 .build(consumer);
 
-        CookingPotRecipeBuilder.cookingPotRecipe(LegumeDelightItems.BEAN_PATTY.get(), 3, NORMAL_COOKING, MEDIUM_EXP)
-                .addIngredient(LegumeDelightTags.CROPS_BEAN)
+        CookingPotRecipeBuilder.cookingPotRecipe(LegumeDelightItems.BEAN_PATTY.get(), 1, NORMAL_COOKING, MEDIUM_EXP)
                 .addIngredient(LegumeDelightTags.CROPS_BEAN)
                 .addIngredient(LegumeDelightTags.CROPS_BEAN)
                 .addIngredient(Items.WHEAT)
-                .addIngredient(Items.WHEAT)
-                .addIngredient(ForgeTags.CROPS_ONION)
                 .unlockedByItems("has_beans", LegumeDelightItems.BEANS.get())
                 .setRecipeBookTab(CookingPotRecipeBookTab.MISC)
                 .build(consumer);
@@ -104,7 +101,10 @@ public class LegumeDelightCookingRecipes {
                 .build(consumer);
 
         CookingPotRecipeBuilder.cookingPotRecipe(LegumeDelightItems.PEANUT_BUTTER.get(), 1, NORMAL_COOKING, SMALL_EXP)
-                .addIngredient(LegumeDelightTags.CROPS_PEANUT)
+                .addIngredient(Ingredient.fromValues(Stream.of(
+                    new Ingredient.TagValue(LegumeDelightTags.NUTS_PEANUT),
+                    new Ingredient.ItemValue(new ItemStack(LegumeDelightItems.ROASTED_PEANUTS.get()))
+                )))
                 .unlockedByItems("has_peanuts", LegumeDelightItems.PEANUTS.get())
                 .setRecipeBookTab(CookingPotRecipeBookTab.MISC)
                 .build(consumer);
