@@ -3,9 +3,14 @@
   "cookingtime": 200,
   "experience": 0.35,
   "ingredients": [
-    {
-      "tag": "forge:crops/peanut"
-    }
+    [
+      {
+        "tag": "forge:nuts/peanut"
+      },
+      {
+        "item": "legumedelight:roasted_peanuts"
+      }
+    ]
   ],
   "recipe_book_tab": "misc",
   "result": {

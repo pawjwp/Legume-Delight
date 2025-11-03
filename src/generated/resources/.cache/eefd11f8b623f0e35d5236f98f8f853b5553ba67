@@ -1,4 +1,4 @@
-// 1.20.1	2025-10-28T22:15:49.5843711	Item Models: legumedelight
+// 1.20.1	2025-11-02T20:17:27.1941634	Item Models: legumedelight
 00bcff56394cca18db73d240a80d3797defa54a6 assets/legumedelight/models/item/baked_beans.json
 48e681c9c33dbd902d26bd6458fc0e1987695b54 assets/legumedelight/models/item/beans.json
 ca2cd3e9c079d13842c040244d322f13003400d3 assets/legumedelight/models/item/beans_and_rice.json
@@ -11,7 +11,6 @@ a42bfecd32c44571f142b85a67011b113e902260 assets/legumedelight/models/item/bean_s
 2d65124355d7904a8ebdfe0a97c5d72d719a11be assets/legumedelight/models/item/candied_peanuts.json
 859b34f4c6340f735e77ad4fcbf585456d56c384 assets/legumedelight/models/item/chili.json
 394521de6e701ab45eea11872f4a24308bc6d1d9 assets/legumedelight/models/item/mooncake.json
-68ca37dc5e8aae370db02ede240990d925b2c60c assets/legumedelight/models/item/nachos.json
 c27d17ee178131344a44d6f2b4f3cf8d1daf78a5 assets/legumedelight/models/item/pad_thai.json
 986141c25049b10916437a756339a551b710bcd3 assets/legumedelight/models/item/pasta_with_tomato_sauce.json
 794f13ead1d6d9fa6ac9c3cd53ee7d23c10c7ca0 assets/legumedelight/models/item/peanuts.json
