@@ -71,7 +71,7 @@ description='''${mod_description}'''
     ordering="AFTER"
     side="BOTH"
 [[dependencies."${mod_id}"]]
-    modId="farmersdelight"
+    modId="culturaldelights"
     mandatory=false
     versionRange="[0.16.0,)"
     ordering="AFTER"
