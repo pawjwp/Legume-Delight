@@ -87,8 +87,8 @@ public class LegumeDelightItems {
             () -> new Item(foodItem(LegumeDelightFoodValues.NACHOS)));*/
     public static final RegistryObject<Item> PEANUT_BUTTER_AND_JAM_SANDWICH = registerWithTab("peanut_butter_and_jam_sandwich",
             () -> new Item(foodItem(LegumeDelightFoodValues.PEANUT_BUTTER_AND_JAM_SANDWICH)));
-    public static final RegistryObject<Item> POTATO_TACO = registerWithTab("potato_taco",
-            () -> new Item(foodItem(LegumeDelightFoodValues.POTATO_TACO)));
+    /*public static final RegistryObject<Item> POTATO_TACO = registerWithTab("potato_taco",
+            () -> new Item(foodItem(LegumeDelightFoodValues.POTATO_TACO)));*/
 
     // Bowl Foods
     public static final RegistryObject<Item> BAKED_BEANS = registerWithTab("baked_beans",

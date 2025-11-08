@@ -134,7 +134,7 @@ public class LegumeDelightCraftingRecipes {
                 .unlockedBy("has_peanut_butter", InventoryChangeTrigger.TriggerInstance.hasItems(LegumeDelightItems.PEANUT_BUTTER.get()))
                 .save(consumer);
 
-        ConditionalRecipe.builder()
+        /*ConditionalRecipe.builder()
                 .addCondition(new NotCondition(new ModLoadedCondition("culturaldelights")))
                 .addRecipe(c -> ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, LegumeDelightItems.POTATO_TACO.get())
                         .requires(Items.BREAD)
@@ -153,7 +153,7 @@ public class LegumeDelightCraftingRecipes {
                         .requires(ForgeTags.CROPS_ONION)
                         .unlockedBy("has_potatoes", InventoryChangeTrigger.TriggerInstance.hasItems(Items.POTATO))
                         .save(c))
-                .build(consumer, (ResourceLocation.fromNamespaceAndPath(LegumeDelight.MOD_ID, "potato_taco")));
+                .build(consumer, (ResourceLocation.fromNamespaceAndPath(LegumeDelight.MOD_ID, "potato_taco")));*/
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, LegumeDelightItems.RICE_CAKE.get(), 2)
                 .requires(ModItems.COOKED_RICE.get())

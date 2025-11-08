@@ -1,4 +1,4 @@
-// 1.20.1	2025-11-02T20:17:27.195705	Recipes
+// 1.20.1	2025-11-08T13:37:09.0967871	Recipes
 53581db18ad2f2e91e37851aa532e7df84b09a0a data/farmersdelight/advancements/recipes/cooking/baked_beans.json
 0da1d31aff87c1bfec60aaf4166d09b94092a4d3 data/farmersdelight/advancements/recipes/cooking/beans_and_rice.json
 ac6d4a65beb925520c9c222005b87daee6a4fa51 data/farmersdelight/advancements/recipes/cooking/bean_paste.json
@@ -43,7 +43,6 @@ a26d71658b50bbc0afa835e2a145cad7b541701a data/legumedelight/recipes/beans_on_toa
 4d9ac7676ee6c5e79853bbb676e0cdcf6db4873d data/legumedelight/recipes/peanut_butter_cookie.json
 febb1fc8ac276b977bea9c535c50e195ae75bb1a data/legumedelight/recipes/peanut_butter_cup.json
 690e6c96704d9c4c05cb7f31e617f88765d5bcca data/legumedelight/recipes/peanut_sack.json
-3bc9c4ea8a85555cc85a14ff6383be3b1d8a8959 data/legumedelight/recipes/potato_taco.json
 11d7f664faa221085db9da4b04ea85a37db0c627 data/legumedelight/recipes/rice_cake.json
 fdc66c9b86246d42d9cd7a541ceaf221f81b523a data/legumedelight/recipes/roasted_peanuts.json
 c9edf86983ced7eefe438ae9ae92bae311e0b718 data/legumedelight/recipes/roasted_peanuts_from_campfire_cooking.json

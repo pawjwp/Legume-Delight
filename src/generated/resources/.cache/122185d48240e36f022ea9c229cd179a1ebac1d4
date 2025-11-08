@@ -1,9 +1,9 @@
-// 1.20.1	2025-11-02T20:17:27.196235	Tags for minecraft:item mod id legumedelight
+// 1.20.1	2025-11-08T13:37:09.0978201	Tags for minecraft:item mod id legumedelight
 6b790cf1899bd6a9babcac29ae862fe5aed26c12 data/create/tags/items/upright_on_belt.json
 b2b026af17f9725376c0a282581d940d45acca3d data/diet/tags/items/grains.json
 db75ababbdd2dc828c0303ee5bd2d4463574a84c data/diet/tags/items/proteins.json
 f0b2e549f1a849209e8b11d49749c7284e003a1e data/diet/tags/items/vegetables.json
-a4210c51773205df2aa96d58fad318aced4bd42e data/farmersdelight/tags/items/meals.json
+b481fc250eca70ff9a6607e266ac47a367e6b36c data/farmersdelight/tags/items/meals.json
 f22048d3c73ef94f6bc43486047a8b5eba48215f data/forge/tags/items/bean.json
 f22048d3c73ef94f6bc43486047a8b5eba48215f data/forge/tags/items/beans.json
 f22048d3c73ef94f6bc43486047a8b5eba48215f data/forge/tags/items/beans/bean.json
