@@ -46,13 +46,14 @@ public class LegumeDelightBlockStates extends BlockStateProvider {
 
         this.customStageBlock(
                 LegumeDelightBlocks.BUDDING_BEAN_CROP.get(),
-                ResourceLocation.parse("block/cross"),
+                ResourceLocation.fromNamespaceAndPath("farmersdelight", "block/crop_cross"),
                 "cross",
                 BuddingBeanBlock.AGE,
                 Arrays.asList(0, 1, 2, 3, 3)
         );
         this.ropeLoggedVineBlock(
                 LegumeDelightBlocks.BEAN_CROP.get(),
+                ResourceLocation.fromNamespaceAndPath("farmersdelight", "block/crop_with_rope"),
                 "beans",
                 BeanVineBlock.VINE_AGE,
                 BeanVineBlock.ROPELOGGED,
@@ -62,7 +63,7 @@ public class LegumeDelightBlockStates extends BlockStateProvider {
         );
         this.customStageBlock(
                 LegumeDelightBlocks.PEANUT_CROP.get(),
-                ResourceLocation.parse("block/cross"),
+                ResourceLocation.fromNamespaceAndPath("farmersdelight", "block/crop_cross"),
                 "cross",
                 PeanutBlock.AGE,
                 Arrays.asList(0, 1, 2, 3, 4, 5, 6, 7)
@@ -112,6 +113,7 @@ public class LegumeDelightBlockStates extends BlockStateProvider {
 
     public void ropeLoggedVineBlock(
             Block block,
+            @Nullable ResourceLocation parent,
             String baseName,
             IntegerProperty ageProperty,
             BooleanProperty ropeProperty,
@@ -126,13 +128,14 @@ public class LegumeDelightBlockStates extends BlockStateProvider {
                     int suffix = suffixes.isEmpty() ? ageSuffix : suffixes.get(Math.min(suffixes.size() - 1, ageSuffix));
                     boolean rope = state.getValue(ropeProperty);
 
+                    String textureName = baseName + "_stage" + suffix;
                     String modelName = baseName + (rope ? "_vine_stage" : "_stage") + suffix;
 
                     if (rope) {
                         return ConfiguredModel.builder()
                                 .modelFile(models()
-                                        .withExistingParent(modelName, ResourceLocation.parse("farmersdelight:block/crop_with_rope"))
-                                        .texture("crop", resourceBlock(modelName))
+                                        .withExistingParent(modelName, parent)
+                                        .texture("crop", resourceBlock(textureName))
                                         .texture("rope_side", ropeSideTexture)
                                         .texture("rope_top",  ropeTopTexture)
                                         .renderType("cutout"))
@@ -140,7 +143,7 @@ public class LegumeDelightBlockStates extends BlockStateProvider {
                     } else {
                         return ConfiguredModel.builder()
                                 .modelFile(models()
-                                        .singleTexture(modelName, ResourceLocation.parse("block/cross"), "cross", resourceBlock(modelName))
+                                        .singleTexture(textureName, ResourceLocation.parse("farmersdelight:block/crop_cross"), "cross", resourceBlock(modelName))
                                         .renderType("cutout"))
                                 .build();
                     }
