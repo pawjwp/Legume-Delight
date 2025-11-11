@@ -1,6 +1,7 @@
 package net.pawjwp.legumedelight.item;
 
 import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.food.FoodProperties;
 import vectorwing.farmersdelight.common.registry.ModEffects;
 
@@ -26,11 +27,12 @@ public class LegumeDelightFoodValues {
     public static final FoodProperties REFRIED_BEANS = (new FoodProperties.Builder())
             .nutrition(3).saturationMod(0.4f).build();
     public static final FoodProperties ROASTED_PEANUTS = (new FoodProperties.Builder())
-            .nutrition(4).saturationMod(0.5f).fast().build();
+            .nutrition(3).saturationMod(0.5f).fast().build();
 
     // Sweets
     public static final FoodProperties CANDIED_PEANUTS = (new FoodProperties.Builder())
-            .nutrition(4).saturationMod(0.5f).fast().build();
+            .nutrition(4).saturationMod(0.5f).fast()
+            .effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, BRIEF_DURATION, 0), 1.0F).build();
         // Mooncake (use pie slice values)
         public static final FoodProperties PEANUT_BAR = (new FoodProperties.Builder())
                 .nutrition(4).saturationMod(0.8f).fast().build();
