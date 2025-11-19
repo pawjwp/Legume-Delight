@@ -53,8 +53,8 @@ public class LegumeDelightCookingRecipes {
 
         CookingPotRecipeBuilder.cookingPotRecipe(LegumeDelightItems.BEANS_AND_RICE.get(), 1, FAST_COOKING, SMALL_EXP)
                 .addIngredient(LegumeDelightTags.CROPS_BEAN)
-                .addIngredient(ModItems.COOKED_RICE.get())
-                .unlockedByAnyIngredient(LegumeDelightItems.BEANS.get(), ModItems.COOKED_RICE.get())
+                .addIngredient(ModItems.RICE.get())
+                .unlockedByAnyIngredient(LegumeDelightItems.BEANS.get(), ModItems.RICE.get())
                 .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
                 .build(consumer);
 
