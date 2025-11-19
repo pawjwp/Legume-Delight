@@ -27,8 +27,11 @@ public class LegumeDelightCookingRecipes {
         CookingPotRecipeBuilder.cookingPotRecipe(LegumeDelightItems.BAKED_BEANS.get(), 1, NORMAL_COOKING, MEDIUM_EXP)
                 .addIngredient(LegumeDelightTags.CROPS_BEAN)
                 .addIngredient(LegumeDelightTags.CROPS_BEAN)
-                .addIngredient(LegumeDelightTags.CROPS_BEAN)
                 .addIngredient(ModItems.TOMATO_SAUCE.get())
+                .addIngredient(Ingredient.fromValues(Stream.of( // sweeteners
+                        new Ingredient.ItemValue(new ItemStack(Items.SUGAR)),
+                        new Ingredient.ItemValue(new ItemStack(Items.HONEY_BOTTLE))
+                )))
                 .unlockedByAnyIngredient(LegumeDelightItems.BEANS.get(), ModItems.TOMATO_SAUCE.get())
                 .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
                 .build(consumer);
