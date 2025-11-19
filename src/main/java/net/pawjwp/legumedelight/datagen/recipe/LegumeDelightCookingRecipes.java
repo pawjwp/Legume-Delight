@@ -74,9 +74,9 @@ public class LegumeDelightCookingRecipes {
         CookingPotRecipeBuilder.cookingPotRecipe(LegumeDelightItems.CHILI.get(), 1, NORMAL_COOKING, MEDIUM_EXP)
                 .addIngredient(LegumeDelightTags.CROPS_BEAN)
                 .addIngredient(LegumeDelightTags.CROPS_BEAN)
+                .addIngredient(LegumeDelightTags.CROPS_BEAN)
                 .addIngredient(ForgeTags.CROPS_ONION)
                 .addIngredient(ModItems.TOMATO_SAUCE.get())
-                .addIngredient(ForgeTags.CROPS_TOMATO)
                 .addIngredient(ForgeTags.CROPS_TOMATO)
                 .unlockedByAnyIngredient(LegumeDelightItems.BEANS.get(), ModItems.TOMATO_SAUCE.get(), ModItems.TOMATO.get(), ModItems.ONION.get())
                 .build(consumer);
