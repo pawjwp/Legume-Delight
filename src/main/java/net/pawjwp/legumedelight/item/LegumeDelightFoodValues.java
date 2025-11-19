@@ -35,12 +35,12 @@ public class LegumeDelightFoodValues {
             .effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, BRIEF_DURATION, 0), 1.0F).build();
         // Mooncake (use pie slice values)
         public static final FoodProperties PEANUT_BAR = (new FoodProperties.Builder())
-                .nutrition(4).saturationMod(0.8f).fast().build();
+                .nutrition(5).saturationMod(0.8f).fast().build();
         // Peanut butter cookie (use cookie value)
         // Peanut butter cup (use cookie value)
         // Rice cake (use cake slice value)
         public static final FoodProperties TRAIL_MIX = (new FoodProperties.Builder())
-                .nutrition(4).saturationMod(0.8f).fast().build();
+                .nutrition(5).saturationMod(0.8f).fast().build();
 
     // Handheld Foods
     public static final FoodProperties BEAN_BURGER = (new FoodProperties.Builder())
