@@ -72,7 +72,7 @@ public class LegumeDelightItems {
     public static final RegistryObject<Item> PEANUT_BUTTER_CUP = registerWithTab("peanut_butter_cup",
             () -> new Item(foodItem(FoodValues.COOKIES)));
     public static final RegistryObject<Item> RICE_CAKE = registerWithTab("rice_cake",
-            () -> new Item(foodItem(FoodValues.CAKE_SLICE)));
+            () -> new Item(foodItem(FoodValues.PIE_SLICE)));
     public static final RegistryObject<Item> TRAIL_MIX = registerWithTab("trail_mix",
             () -> new Item(foodItem(LegumeDelightFoodValues.TRAIL_MIX)));
 
