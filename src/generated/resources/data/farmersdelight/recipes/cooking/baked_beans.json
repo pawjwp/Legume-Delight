@@ -10,11 +10,16 @@
       "tag": "forge:crops/bean"
     },
     {
-      "tag": "forge:crops/bean"
-    },
-    {
       "item": "farmersdelight:tomato_sauce"
-    }
+    },
+    [
+      {
+        "item": "minecraft:sugar"
+      },
+      {
+        "item": "minecraft:honey_bottle"
+      }
+    ]
   ],
   "recipe_book_tab": "meals",
   "result": {
