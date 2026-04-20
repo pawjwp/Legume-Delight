@@ -59,16 +59,16 @@ public class LegumeDelightFoodValues {
     // Bowl Foods
     public static final FoodProperties BAKED_BEANS = (new FoodProperties.Builder())
             .nutrition(10).saturationMod(0.8f)
-            .effect(() -> new MobEffectInstance(ModEffects.COMFORT.get(), MEDIUM_DURATION, 0), 1.0F).build();
+            .effect(() -> new MobEffectInstance(ModEffects.NOURISHMENT.get(), MEDIUM_DURATION, 0), 1.0F).build();
     public static final FoodProperties BEANS_AND_RICE = (new FoodProperties.Builder())
             .nutrition(10).saturationMod(0.7f)
-            .effect(() -> new MobEffectInstance(ModEffects.COMFORT.get(), SHORT_DURATION, 0), 1.0F).build();
+            .effect(() -> new MobEffectInstance(ModEffects.NOURISHMENT.get(), SHORT_DURATION, 0), 1.0F).build();
     public static final FoodProperties CHILI = (new FoodProperties.Builder())
             .nutrition(13).saturationMod(0.8f)
-            .effect(() -> new MobEffectInstance(ModEffects.COMFORT.get(), MEDIUM_DURATION, 0), 1.0F).build();
+            .effect(() -> new MobEffectInstance(ModEffects.NOURISHMENT.get(), MEDIUM_DURATION, 0), 1.0F).build();
     public static final FoodProperties PAD_THAI = (new FoodProperties.Builder())
             .nutrition(14).saturationMod(0.8f)
-            .effect(() -> new MobEffectInstance(ModEffects.COMFORT.get(), LONG_DURATION, 0), 1.0F).build();
+            .effect(() -> new MobEffectInstance(ModEffects.NOURISHMENT.get(), LONG_DURATION, 0), 1.0F).build();
 
     // Plated Foods
     public static final FoodProperties PASTA_WITH_TOMATO_SAUCE = (new FoodProperties.Builder())
