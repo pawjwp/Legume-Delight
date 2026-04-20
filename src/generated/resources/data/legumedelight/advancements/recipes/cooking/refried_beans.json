@@ -1,34 +1,34 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_peanuts": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "legumedelight:cooking/refried_beans"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "hsa_beans": {
       "conditions": {
         "items": [
           {
             "items": [
-              "legumedelight:peanuts"
+              "legumedelight:beans"
             ]
           }
         ]
       },
       "trigger": "minecraft:inventory_changed"
-    },
-    "has_the_recipe": {
-      "conditions": {
-        "recipe": "farmersdelight:cooking/candied_peanuts"
-      },
-      "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_peanuts",
+      "hsa_beans",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "farmersdelight:cooking/candied_peanuts"
+      "legumedelight:cooking/refried_beans"
     ]
   },
   "sends_telemetry_event": true

@@ -1,15 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_any_ingredient": {
+    "has_beans": {
       "conditions": {
         "items": [
           {
             "items": [
-              "legumedelight:beans",
-              "farmersdelight:tomato_sauce",
-              "farmersdelight:tomato",
-              "farmersdelight:onion"
+              "legumedelight:beans"
             ]
           }
         ]
@@ -18,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "farmersdelight:cooking/chili"
+        "recipe": "legumedelight:cooking/bean_paste"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_any_ingredient",
+      "has_beans",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "farmersdelight:cooking/chili"
+      "legumedelight:cooking/bean_paste"
     ]
   },
   "sends_telemetry_event": true

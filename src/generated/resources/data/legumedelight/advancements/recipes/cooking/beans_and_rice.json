@@ -6,8 +6,8 @@
         "items": [
           {
             "items": [
-              "farmersdelight:raw_pasta",
-              "farmersdelight:tomato_sauce"
+              "legumedelight:beans",
+              "farmersdelight:rice"
             ]
           }
         ]
@@ -16,7 +16,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "farmersdelight:cooking/pasta_with_tomato_sauce"
+        "recipe": "legumedelight:cooking/beans_and_rice"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -29,7 +29,7 @@
   ],
   "rewards": {
     "recipes": [
-      "farmersdelight:cooking/pasta_with_tomato_sauce"
+      "legumedelight:cooking/beans_and_rice"
     ]
   },
   "sends_telemetry_event": true

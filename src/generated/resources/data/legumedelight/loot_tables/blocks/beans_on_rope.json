@@ -20,11 +20,10 @@
       "bonus_rolls": 0.0,
       "conditions": [
         {
-          "block": "legumedelight:beans",
+          "block": "legumedelight:beans_on_rope",
           "condition": "minecraft:block_state_property",
           "properties": {
-            "age": "3",
-            "ropelogged": "false"
+            "age": "3"
           }
         }
       ],
@@ -48,5 +47,5 @@
       "rolls": 1.0
     }
   ],
-  "random_sequence": "legumedelight:blocks/beans"
+  "random_sequence": "legumedelight:blocks/beans_on_rope"
 }

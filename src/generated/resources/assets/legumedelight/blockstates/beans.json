@@ -4,25 +4,25 @@
       "model": "legumedelight:block/beans_stage0"
     },
     "age=0,ropelogged=true": {
-      "model": "legumedelight:block/beans_vine_stage0"
+      "model": "legumedelight:block/beans_old_stage0"
     },
     "age=1,ropelogged=false": {
       "model": "legumedelight:block/beans_stage1"
     },
     "age=1,ropelogged=true": {
-      "model": "legumedelight:block/beans_vine_stage1"
+      "model": "legumedelight:block/beans_old_stage1"
     },
     "age=2,ropelogged=false": {
       "model": "legumedelight:block/beans_stage2"
     },
     "age=2,ropelogged=true": {
-      "model": "legumedelight:block/beans_vine_stage2"
+      "model": "legumedelight:block/beans_old_stage2"
     },
     "age=3,ropelogged=false": {
       "model": "legumedelight:block/beans_stage3"
     },
     "age=3,ropelogged=true": {
-      "model": "legumedelight:block/beans_vine_stage3"
+      "model": "legumedelight:block/beans_old_stage3"
     }
   }
 }

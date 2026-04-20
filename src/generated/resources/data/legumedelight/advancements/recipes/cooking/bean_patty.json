@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "farmersdelight:cooking/bean_paste"
+        "recipe": "legumedelight:cooking/bean_patty"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -28,7 +28,7 @@
   ],
   "rewards": {
     "recipes": [
-      "farmersdelight:cooking/bean_paste"
+      "legumedelight:cooking/bean_patty"
     ]
   },
   "sends_telemetry_event": true

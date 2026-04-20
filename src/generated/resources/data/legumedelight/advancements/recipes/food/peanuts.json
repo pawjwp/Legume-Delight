@@ -1,13 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_any_ingredient": {
+    "has_peanut_sack": {
       "conditions": {
         "items": [
           {
             "items": [
-              "legumedelight:beans",
-              "farmersdelight:rice"
+              "legumedelight:peanut_sack"
             ]
           }
         ]
@@ -16,21 +15,21 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "farmersdelight:cooking/beans_and_rice"
+        "recipe": "legumedelight:peanuts"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_any_ingredient",
+      "has_peanut_sack",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "farmersdelight:cooking/beans_and_rice"
+      "legumedelight:peanuts"
     ]
   },
-  "sends_telemetry_event": true
+  "sends_telemetry_event": false
 }

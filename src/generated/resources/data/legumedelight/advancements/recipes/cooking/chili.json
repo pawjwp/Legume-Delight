@@ -6,9 +6,10 @@
         "items": [
           {
             "items": [
-              "farmersdelight:raw_pasta",
-              "legumedelight:peanut_butter",
-              "minecraft:dried_kelp"
+              "legumedelight:beans",
+              "farmersdelight:tomato_sauce",
+              "farmersdelight:tomato",
+              "farmersdelight:onion"
             ]
           }
         ]
@@ -17,7 +18,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "farmersdelight:cooking/pad_thai"
+        "recipe": "legumedelight:cooking/chili"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -30,7 +31,7 @@
   ],
   "rewards": {
     "recipes": [
-      "farmersdelight:cooking/pad_thai"
+      "legumedelight:cooking/chili"
     ]
   },
   "sends_telemetry_event": true

@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "farmersdelight:cooking/peanut_butter"
+        "recipe": "legumedelight:cooking/candied_peanuts"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -28,7 +28,7 @@
   ],
   "rewards": {
     "recipes": [
-      "farmersdelight:cooking/peanut_butter"
+      "legumedelight:cooking/candied_peanuts"
     ]
   },
   "sends_telemetry_event": true

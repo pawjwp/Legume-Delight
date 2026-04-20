@@ -1,12 +1,13 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_beans": {
+    "has_any_ingredient": {
       "conditions": {
         "items": [
           {
             "items": [
-              "legumedelight:beans"
+              "legumedelight:beans",
+              "farmersdelight:tomato_sauce"
             ]
           }
         ]
@@ -15,20 +16,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "farmersdelight:cooking/bean_patty"
+        "recipe": "legumedelight:cooking/baked_beans"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_beans",
+      "has_any_ingredient",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "farmersdelight:cooking/bean_patty"
+      "legumedelight:cooking/baked_beans"
     ]
   },
   "sends_telemetry_event": true
