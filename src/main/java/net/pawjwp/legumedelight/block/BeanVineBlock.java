@@ -5,11 +5,9 @@ import net.minecraft.core.Direction;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundSource;
-import net.minecraft.tags.BlockTags;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
-import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
@@ -25,6 +23,7 @@ import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import net.minecraftforge.common.ForgeHooks;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.pawjwp.legumedelight.item.LegumeDelightItems;
 import vectorwing.farmersdelight.common.Configuration;
@@ -43,6 +42,10 @@ public class BeanVineBlock extends CropBlock
     public BeanVineBlock(Properties properties) {
         super(properties);
         registerDefaultState(stateDefinition.any().setValue(getAgeProperty(), 0).setValue(ROPELOGGED, false));
+    }
+
+    protected BeanVineBlock(Properties properties, boolean dummy) {
+        super(properties);
     }
 
     @Override
@@ -70,34 +73,42 @@ public class BeanVineBlock extends CropBlock
     @Override
     public void randomTick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
         if (!level.isAreaLoaded(pos, 1)) return;
+
+        // TODO: Remove this and the ropelogged blockstate in a future version when Farmer's Delight does
+        if (state.is(LegumeDelightBlocks.BEAN_CROP.get()) && state.getValue(ROPELOGGED)) {
+            level.setBlockAndUpdate(pos, LegumeDelightBlocks.BEAN_CROP_ON_ROPE.get().defaultBlockState()
+                    .setValue(VINE_AGE, this.getAge(state)));
+            return;
+        }
+
         if (level.getRawBrightness(pos, 0) >= 9) {
             int age = this.getAge(state);
             if (age < this.getMaxAge()) {
-                float speed = getGrowthSpeed(this, level, pos);
-                if (net.minecraftforge.common.ForgeHooks.onCropsGrowPre(level, pos, state, random.nextInt((int) (25.0F / speed) + 1) == 0)) {
+                float speed = 5;
+                if (ForgeHooks.onCropsGrowPre(level, pos, state, random.nextInt((int) (25.0F / speed) + 1) == 0)) {
                     level.setBlock(pos, state.setValue(getAgeProperty(), age + 1), 2);
-                    net.minecraftforge.common.ForgeHooks.onCropsGrowPost(level, pos, state);
+                    ForgeHooks.onCropsGrowPost(level, pos, state);
                 }
             }
-            attemptRopeClimb(level, pos, random);
+            climbRopeAbove(level, pos);
         }
     }
 
-    public void attemptRopeClimb(ServerLevel level, BlockPos pos, RandomSource random) {
-        if (random.nextFloat() < 0.3F) {
-            BlockPos posAbove = pos.above();
-            BlockState stateAbove = level.getBlockState(posAbove);
-            boolean canClimb = Configuration.ENABLE_TOMATO_VINE_CLIMBING_TAGGED_ROPES.get() ? stateAbove.is(ModTags.Blocks.ROPES) : stateAbove.is(ModBlocks.ROPE.get());
-            if (canClimb) {
-                int vineHeight;
-                for (vineHeight = 1; level.getBlockState(pos.below(vineHeight)).is(this); ++vineHeight) {
-                }
-                if (vineHeight < 3) {
-                    level.setBlockAndUpdate(posAbove, defaultBlockState().setValue(ROPELOGGED, true));
-                }
+    public boolean canClimbBlock(BlockState stateAbove) {
+        return Configuration.ENABLE_TOMATO_VINE_CLIMBING_TAGGED_ROPES.get() ? stateAbove.is(ModTags.Blocks.ROPES) : stateAbove.is(ModBlocks.ROPE.get());
+    }
+
+    public void climbRopeAbove(ServerLevel level, BlockPos pos) {
+        BlockPos posAbove = pos.above();
+        BlockState stateAbove = level.getBlockState(posAbove);
+        if (canClimbBlock(stateAbove)) {
+            int vineHeight;
+            for (vineHeight = 1; level.getBlockState(pos.below(vineHeight)).is(this); ++vineHeight) {
+            }
+            if (vineHeight < 3) {
+                level.setBlockAndUpdate(posAbove, LegumeDelightBlocks.BEAN_CROP_ON_ROPE.get().defaultBlockState());
             }
         }
-
     }
 
     @Override
@@ -136,20 +147,51 @@ public class BeanVineBlock extends CropBlock
     }
 
     @Override
-    public void performBonemeal(ServerLevel level, RandomSource random, BlockPos pos, BlockState state) {
-        int newAge = this.getAge(state) + this.getBonemealAgeIncrease(level);
-        int maxAge = this.getMaxAge();
-        if (newAge > maxAge) {
-            newAge = maxAge;
+    public boolean isValidBonemealTarget(LevelReader level, BlockPos pos, BlockState state, boolean isClient) {
+        if (!this.isMaxAge(state)) {
+            return true;
         }
 
-        level.setBlockAndUpdate(pos, state.setValue(getAgeProperty(), newAge));
-        attemptRopeClimb(level, pos, random);
+        BlockPos.MutableBlockPos mutablePos = pos.mutable();
+        for (int height = 0; height < 2; height++) {
+            mutablePos.move(Direction.UP);
+            BlockState nextState = level.getBlockState(mutablePos);
+            if (canClimbBlock(nextState)) {
+                return true;
+            }
+            if (nextState.is(LegumeDelightBlocks.BEAN_CROP_ON_ROPE.get())) {
+                if (!isMaxAge(nextState)) {
+                    return true;
+                }
+            } else {
+                return false;
+            }
+        }
+        return false;
     }
 
     @Override
-    public boolean isLadder(BlockState state, LevelReader level, BlockPos pos, LivingEntity entity) {
-        return state.getValue(ROPELOGGED) && state.is(BlockTags.CLIMBABLE);
+    public void performBonemeal(ServerLevel level, RandomSource random, BlockPos pos, BlockState state) {
+        // TODO: Remove this and the ropelogged blockstate in a future version when Farmer's Delight does
+        if (state.is(LegumeDelightBlocks.BEAN_CROP.get()) && state.getValue(ROPELOGGED)) {
+            level.setBlockAndUpdate(pos, LegumeDelightBlocks.BEAN_CROP_ON_ROPE.get().defaultBlockState()
+                    .setValue(VINE_AGE, this.getAge(state)));
+            return;
+        }
+        int newAge = this.getAge(state) + this.getBonemealAgeIncrease(level);
+        if (newAge <= this.getMaxAge()) {
+            level.setBlockAndUpdate(pos, state.setValue(getAgeProperty(), newAge));
+            if (random.nextFloat() < 0.3F) {
+                climbRopeAbove(level, pos);
+            }
+        } else {
+            BlockState aboveState = level.getBlockState(pos.above());
+            if (canClimbBlock(level.getBlockState(pos.above()))) {
+                climbRopeAbove(level, pos);
+            } else if (aboveState.is(LegumeDelightBlocks.BEAN_CROP_ON_ROPE.get()) && isValidBonemealTarget(level, pos, aboveState, false)) {
+                performBonemeal(level, random, pos.above(), aboveState);
+            }
+        }
     }
 
     @Override
@@ -157,8 +199,8 @@ public class BeanVineBlock extends CropBlock
         BlockPos belowPos = pos.below();
         BlockState belowState = level.getBlockState(belowPos);
 
-        if (state.getValue(BeanVineBlock.ROPELOGGED)) {
-            return belowState.is(LegumeDelightBlocks.BEAN_CROP.get()) && hasGoodCropConditions(level, pos);
+        if (belowState.is(LegumeDelightBlocks.BEAN_CROP.get()) || belowState.is(LegumeDelightBlocks.BEAN_CROP_ON_ROPE.get())) {
+            return hasGoodCropConditions(level, pos);
         }
 
         return super.canSurvive(state, level, pos);
@@ -187,6 +229,10 @@ public class BeanVineBlock extends CropBlock
         return state;
     }
 
+    /**
+     * Deprecated - This block will no longer use its ropelogged state. Refer to HangingBeanBlock instead.
+     */
+    @Deprecated
     public static void destroyAndPlaceRope(Level level, BlockPos pos) {
         Block configuredRopeBlock = ForgeRegistries.BLOCKS.getValue(ResourceLocation.parse(Configuration.DEFAULT_TOMATO_VINE_ROPE.get()));
         Block finalRopeBlock = configuredRopeBlock != null ? configuredRopeBlock : ModBlocks.ROPE.get();

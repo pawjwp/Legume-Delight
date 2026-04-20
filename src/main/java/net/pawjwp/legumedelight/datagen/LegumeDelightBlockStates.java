@@ -13,6 +13,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.pawjwp.legumedelight.LegumeDelight;
 import net.pawjwp.legumedelight.block.BeanVineBlock;
 import net.pawjwp.legumedelight.block.BuddingBeanBlock;
+import net.pawjwp.legumedelight.block.HangingBeanBlock;
 import net.pawjwp.legumedelight.block.LegumeDelightBlocks;
 import net.pawjwp.legumedelight.block.PeanutBlock;
 
@@ -57,6 +58,15 @@ public class LegumeDelightBlockStates extends BlockStateProvider {
                 "beans",
                 BeanVineBlock.VINE_AGE,
                 BeanVineBlock.ROPELOGGED,
+                Arrays.asList(0, 1, 2, 3),
+                resourceBlock("beans_coiled_rope"),
+                ResourceLocation.parse("farmersdelight:block/rope_top")
+        );
+        this.hangingVineBlock(
+                LegumeDelightBlocks.BEAN_CROP_ON_ROPE.get(),
+                ResourceLocation.fromNamespaceAndPath("farmersdelight", "block/template_crop_with_rope"),
+                "beans",
+                HangingBeanBlock.VINE_AGE,
                 Arrays.asList(0, 1, 2, 3),
                 resourceBlock("beans_coiled_rope"),
                 ResourceLocation.parse("farmersdelight:block/rope_top")
@@ -111,6 +121,35 @@ public class LegumeDelightBlockStates extends BlockStateProvider {
                 }, ignored);
     }
 
+    public void hangingVineBlock(
+            Block block,
+            @Nullable ResourceLocation parent,
+            String baseName,
+            IntegerProperty ageProperty,
+            List<Integer> suffixes,
+            ResourceLocation ropeSideTexture,
+            ResourceLocation ropeTopTexture,
+            Property<?>... ignored
+    ) {
+        getVariantBuilder(block)
+                .forAllStatesExcept(state -> {
+                    int ageSuffix = state.getValue(ageProperty);
+                    int suffix = suffixes.isEmpty() ? ageSuffix : suffixes.get(Math.min(suffixes.size() - 1, ageSuffix));
+
+                    String textureName = baseName + "_stage" + suffix;
+                    String modelName = baseName + "_vine_stage" + suffix;
+
+                    return ConfiguredModel.builder()
+                            .modelFile(models()
+                                    .withExistingParent(modelName, parent)
+                                    .texture("crop", resourceBlock(textureName))
+                                    .texture("rope_side", ropeSideTexture)
+                                    .texture("rope_top", ropeTopTexture)
+                                    .renderType("cutout"))
+                            .build();
+                }, ignored);
+    }
+
     public void ropeLoggedVineBlock(
             Block block,
             @Nullable ResourceLocation parent,
@@ -128,8 +167,8 @@ public class LegumeDelightBlockStates extends BlockStateProvider {
                     int suffix = suffixes.isEmpty() ? ageSuffix : suffixes.get(Math.min(suffixes.size() - 1, ageSuffix));
                     boolean rope = state.getValue(ropeProperty);
 
-                    String textureName = baseName + "_stage" + suffix;
-                    String modelName = baseName + (rope ? "_vine_stage" : "_stage") + suffix;
+                    String textureName = rope ? baseName + "_old_stage" + suffix : baseName + "_stage" + suffix;
+                    String modelName = rope ? baseName + "_old_stage" + suffix : baseName + "_stage" + suffix;
 
                     if (rope) {
                         return ConfiguredModel.builder()

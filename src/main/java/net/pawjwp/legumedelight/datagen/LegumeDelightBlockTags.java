@@ -30,11 +30,13 @@ public class LegumeDelightBlockTags extends BlockTagsProvider {
 
         // Minecraft Tags
         this.tag(net.minecraft.tags.BlockTags.CLIMBABLE).add(
-                LegumeDelightBlocks.BEAN_CROP.get()
+                LegumeDelightBlocks.BEAN_CROP.get(),
+                LegumeDelightBlocks.BEAN_CROP_ON_ROPE.get()
         );
         this.tag(net.minecraft.tags.BlockTags.CROPS).add(
                 LegumeDelightBlocks.BUDDING_BEAN_CROP.get(),
                 LegumeDelightBlocks.BEAN_CROP.get(),
+                LegumeDelightBlocks.BEAN_CROP_ON_ROPE.get(),
                 LegumeDelightBlocks.PEANUT_CROP.get()
         );
         this.tag(net.minecraft.tags.BlockTags.SMALL_FLOWERS).add(
@@ -61,11 +63,13 @@ public class LegumeDelightBlockTags extends BlockTagsProvider {
         this.tag(CompatibilityTags.SERENE_SEASONS_SPRING_CROPS_BLOCK).add(
                 LegumeDelightBlocks.BUDDING_BEAN_CROP.get(),
                 LegumeDelightBlocks.BEAN_CROP.get(),
+                LegumeDelightBlocks.BEAN_CROP_ON_ROPE.get(),
                 LegumeDelightBlocks.PEANUT_CROP.get()
         );
         this.tag(CompatibilityTags.SERENE_SEASONS_SUMMER_CROPS_BLOCK).add(
                 LegumeDelightBlocks.BUDDING_BEAN_CROP.get(),
                 LegumeDelightBlocks.BEAN_CROP.get(),
+                LegumeDelightBlocks.BEAN_CROP_ON_ROPE.get(),
                 LegumeDelightBlocks.PEANUT_CROP.get()
         );
     }

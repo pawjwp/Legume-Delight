@@ -12,6 +12,7 @@ import net.minecraft.world.level.storage.loot.functions.ApplyBonusCount;
 import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePropertyCondition;
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
 import net.minecraftforge.registries.RegistryObject;
+import net.pawjwp.legumedelight.block.BeanVineBlock;
 import net.pawjwp.legumedelight.block.LegumeDelightBlocks;
 import net.pawjwp.legumedelight.block.PeanutBlock;
 import net.pawjwp.legumedelight.item.LegumeDelightItems;
@@ -31,7 +32,9 @@ public class LegumeDelightBlockLootTables extends BlockLootSubProvider {
         this.dropOther(LegumeDelightBlocks.BUDDING_BEAN_CROP.get(), LegumeDelightItems.BEANS.get());
 
         LootItemCondition.Builder beansLootable = LootItemBlockStatePropertyCondition.hasBlockStateProperties(LegumeDelightBlocks.BEAN_CROP.get())
-                .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(PeanutBlock.AGE, 7));
+                .setProperties(StatePropertiesPredicate.Builder.properties()
+                        .hasProperty(BeanVineBlock.VINE_AGE, 3)
+                        .hasProperty(BeanVineBlock.ROPELOGGED, false));
         this.add(LegumeDelightBlocks.BEAN_CROP.get(), this.applyExplosionDecay(LegumeDelightBlocks.BEAN_CROP.get(),
                 LootTable.lootTable()
                         .withPool(LootPool.lootPool()
@@ -39,6 +42,21 @@ public class LegumeDelightBlockLootTables extends BlockLootSubProvider {
                         )
                         .withPool(LootPool.lootPool()
                                 .when(beansLootable)
+                                .add(LootItem.lootTableItem(LegumeDelightItems.BEANS.get())
+                                        .apply(ApplyBonusCount.addBonusBinomialDistributionCount(Enchantments.BLOCK_FORTUNE, 0.5714286F, 3))
+                                )
+                        )
+        ));
+
+        LootItemCondition.Builder beansOnRopeLootable = LootItemBlockStatePropertyCondition.hasBlockStateProperties(LegumeDelightBlocks.BEAN_CROP_ON_ROPE.get())
+                .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(BeanVineBlock.VINE_AGE, 3));
+        this.add(LegumeDelightBlocks.BEAN_CROP_ON_ROPE.get(), this.applyExplosionDecay(LegumeDelightBlocks.BEAN_CROP_ON_ROPE.get(),
+                LootTable.lootTable()
+                        .withPool(LootPool.lootPool()
+                                .add(LootItem.lootTableItem(LegumeDelightItems.BEANS.get()))
+                        )
+                        .withPool(LootPool.lootPool()
+                                .when(beansOnRopeLootable)
                                 .add(LootItem.lootTableItem(LegumeDelightItems.BEANS.get())
                                         .apply(ApplyBonusCount.addBonusBinomialDistributionCount(Enchantments.BLOCK_FORTUNE, 0.5714286F, 3))
                                 )

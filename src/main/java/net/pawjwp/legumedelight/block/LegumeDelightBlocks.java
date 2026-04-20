@@ -5,6 +5,7 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.material.MapColor;
+import net.minecraft.world.level.material.PushReaction;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -34,6 +35,8 @@ public class LegumeDelightBlocks {
             () -> new BuddingBeanBlock(Block.Properties.copy(Blocks.WHEAT)));
     public static final RegistryObject<Block> BEAN_CROP = BLOCKS.register("beans",
             () -> new BeanVineBlock(Block.Properties.copy(Blocks.WHEAT)));
+    public static final RegistryObject<Block> BEAN_CROP_ON_ROPE = BLOCKS.register("beans_on_rope",
+            () -> new HangingBeanBlock(Block.Properties.copy(BEAN_CROP.get()).pushReaction(PushReaction.NORMAL)));
     public static final RegistryObject<Block> PEANUT_CROP = BLOCKS.register("peanuts",
             () -> new PeanutBlock(Block.Properties.copy(Blocks.WHEAT)));
 
