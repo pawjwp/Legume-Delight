@@ -131,6 +131,10 @@ repositories {
         }
     }
     maven {
+        name = "Greenhouse"
+        url = "https://maven.greenhouse.lgbt/snapshots"
+    }
+    maven {
         // JEI fallback
         name = "Modmaven"
         url = "https://modmaven.dev/"
@@ -172,7 +176,9 @@ dependencies {
     // compileOnly fg.deobf("mezz.jei:jei-${mc_version}-forge-api:${jei_version}")
     // runtimeOnly fg.deobf("mezz.jei:jei-${mc_version}-forge:${jei_version}")
 
-    implementation fg.deobf("maven.modrinth:farmers-delight:${fd_version}")
+    implementation fg.deobf("vectorwing.farmersdelight:FarmersDelight:1.20.1-1.3.0-rc1@jar") // 1.20.1
+    implementation fg.deobf("io.github.llamalad7:mixinextras-forge:0.3.6")
+    //implementation fg.deobf("maven.modrinth:farmers-delight:${fd_version}")
 
     runtimeOnly fg.deobf("maven.modrinth:diet:${diet_version}")
     runtimeOnly fg.deobf("maven.modrinth:cultural-delights:${cd_version}")

@@ -19,7 +19,7 @@ import java.util.function.Supplier;
 import static vectorwing.farmersdelight.common.registry.ModItems.*;
 
 public class LegumeDelightItems {
-    public static LinkedHashSet<RegistryObject<Item>> CREATIVE_TAB_ITEMS = new LinkedHashSet<>();;
+    public static LinkedHashSet<RegistryObject<Item>> CREATIVE_TAB_ITEMS = new LinkedHashSet<>();
 
     public static final DeferredRegister<Item> ITEMS =
             DeferredRegister.create(ForgeRegistries.ITEMS, LegumeDelight.MOD_ID);
@@ -40,7 +40,7 @@ public class LegumeDelightItems {
     public static final RegistryObject<Item> BEANS = registerWithTab("beans",
 			() -> new ItemNameBlockItem(LegumeDelightBlocks.BUDDING_BEAN_CROP.get(), foodItem(LegumeDelightFoodValues.BEANS)));
     public static final RegistryObject<Item> PEANUTS = registerWithTab("peanuts",
-            () -> new ItemNameBlockItem(LegumeDelightBlocks.PEANUT_CROP.get(), foodItem(LegumeDelightFoodValues.PEANUTS)));;
+            () -> new ItemNameBlockItem(LegumeDelightBlocks.PEANUT_CROP.get(), foodItem(LegumeDelightFoodValues.PEANUTS)));
 
     // Crop Sacks
     public static final RegistryObject<Item> BEAN_SACK = registerWithTab("bean_sack",

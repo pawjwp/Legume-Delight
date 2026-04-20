@@ -13,7 +13,7 @@ import net.pawjwp.legumedelight.item.LegumeDelightItems;
 import net.pawjwp.legumedelight.tag.LegumeDelightTags;
 import org.jetbrains.annotations.Nullable;
 import vectorwing.farmersdelight.common.tag.CompatibilityTags;
-import vectorwing.farmersdelight.common.tag.ForgeTags;
+import vectorwing.farmersdelight.common.tag.CommonTags;
 import vectorwing.farmersdelight.common.tag.ModTags;
 
 import java.util.concurrent.CompletableFuture;
@@ -33,52 +33,52 @@ public class LegumeDelightItemTags extends ItemTagsProvider {
         );
 
         // Forge Tags
-        this.tag(ForgeTags.CROPS).add(
+        this.tag(CommonTags.Items.CROPS).add(
                 LegumeDelightItems.BEANS.get(),
                 LegumeDelightItems.PEANUTS.get()
         );
-        this.tag(LegumeDelightTags.CROPS_BEAN).add(LegumeDelightItems.BEANS.get());
-        this.tag(LegumeDelightTags.CROPS_PEANUT).add(LegumeDelightItems.PEANUTS.get());
+        this.tag(LegumeDelightTags.Items.CROPS_BEAN).add(LegumeDelightItems.BEANS.get());
+        this.tag(LegumeDelightTags.Items.CROPS_PEANUT).add(LegumeDelightItems.PEANUTS.get());
 
-        this.tag(LegumeDelightTags.LEGUMES).add(
+        this.tag(LegumeDelightTags.Items.LEGUMES).add(
                 LegumeDelightItems.BEANS.get(),
                 LegumeDelightItems.PEANUTS.get()
         );
-        this.tag(LegumeDelightTags.LEGUMES_BEAN).add(LegumeDelightItems.BEANS.get());
-        this.tag(LegumeDelightTags.LEGUMES_PEANUT).add(LegumeDelightItems.PEANUTS.get());
+        this.tag(LegumeDelightTags.Items.LEGUMES_BEAN).add(LegumeDelightItems.BEANS.get());
+        this.tag(LegumeDelightTags.Items.LEGUMES_PEANUT).add(LegumeDelightItems.PEANUTS.get());
 
 
-        this.tag(LegumeDelightTags.BEAN).add(LegumeDelightItems.BEANS.get());
-        this.tag(LegumeDelightTags.BEANS).add(LegumeDelightItems.BEANS.get());
-        this.tag(LegumeDelightTags.BEANS_BEAN).add(LegumeDelightItems.BEANS.get());
+        this.tag(LegumeDelightTags.Items.BEAN).add(LegumeDelightItems.BEANS.get());
+        this.tag(LegumeDelightTags.Items.BEANS).add(LegumeDelightItems.BEANS.get());
+        this.tag(LegumeDelightTags.Items.BEANS_BEAN).add(LegumeDelightItems.BEANS.get());
 
-        this.tag(LegumeDelightTags.BEAN_PASTE).add(LegumeDelightItems.BEAN_PASTE.get());
-        this.tag(LegumeDelightTags.RED_BEAN_PASTE).add(LegumeDelightItems.BEAN_PASTE.get());
-        this.tag(LegumeDelightTags.REFRIED_BEANS).add(LegumeDelightItems.REFRIED_BEANS.get());
+        this.tag(LegumeDelightTags.Items.BEAN_PASTE).add(LegumeDelightItems.BEAN_PASTE.get());
+        this.tag(LegumeDelightTags.Items.RED_BEAN_PASTE).add(LegumeDelightItems.BEAN_PASTE.get());
+        this.tag(LegumeDelightTags.Items.REFRIED_BEANS).add(LegumeDelightItems.REFRIED_BEANS.get());
 
 
-        this.tag(LegumeDelightTags.PEANUT).add(LegumeDelightItems.PEANUTS.get());
-        this.tag(LegumeDelightTags.PEANUTS).add(LegumeDelightItems.PEANUTS.get());
-        this.tag(LegumeDelightTags.NUTS).add(LegumeDelightItems.PEANUTS.get());
-        this.tag(LegumeDelightTags.NUTS_PEANUT).add(LegumeDelightItems.PEANUTS.get());
+        this.tag(LegumeDelightTags.Items.PEANUT).add(LegumeDelightItems.PEANUTS.get());
+        this.tag(LegumeDelightTags.Items.PEANUTS).add(LegumeDelightItems.PEANUTS.get());
+        this.tag(LegumeDelightTags.Items.NUTS).add(LegumeDelightItems.PEANUTS.get());
+        this.tag(LegumeDelightTags.Items.NUTS_PEANUT).add(LegumeDelightItems.PEANUTS.get());
 
-        this.tag(LegumeDelightTags.NUT_BUTTER).add(LegumeDelightItems.PEANUT_BUTTER.get());
-        this.tag(LegumeDelightTags.PEANUT_BUTTER).add(LegumeDelightItems.PEANUT_BUTTER.get());
+        this.tag(LegumeDelightTags.Items.NUT_BUTTER).add(LegumeDelightItems.PEANUT_BUTTER.get());
+        this.tag(LegumeDelightTags.Items.PEANUT_BUTTER).add(LegumeDelightItems.PEANUT_BUTTER.get());
 
-        this.tag(ForgeTags.BERRIES); // establish tag exists before use
-        this.tag(LegumeDelightTags.FRUITS).add(
+        this.tag(CommonTags.Items.BERRIES); // establish tag exists before use
+        this.tag(LegumeDelightTags.Items.FRUITS).add(
                 Items.APPLE,
                 Items.MELON_SLICE,
                 Items.CHORUS_FRUIT
         ).addTag(
-                ForgeTags.BERRIES
+                CommonTags.Items.BERRIES
         );
 
-        this.tag(LegumeDelightTags.STORAGE_BLOCKS_ITEM_BEAN).add(LegumeDelightItems.BEAN_SACK.get());
-        this.tag(LegumeDelightTags.STORAGE_BLOCKS_ITEM_PEANUT).add(LegumeDelightItems.PEANUT_SACK.get());
+        this.tag(LegumeDelightTags.Items.STORAGE_BLOCKS_ITEM_BEAN).add(LegumeDelightItems.BEAN_SACK.get());
+        this.tag(LegumeDelightTags.Items.STORAGE_BLOCKS_ITEM_PEANUT).add(LegumeDelightItems.PEANUT_SACK.get());
 
         // Farmer's Delight Tags
-        this.tag(ModTags.MEALS).add(
+        this.tag(ModTags.Items.MEALS).add(
                 LegumeDelightItems.BAKED_BEANS.get(),
                 LegumeDelightItems.BEAN_BURGER.get(),
                 LegumeDelightItems.BEAN_BURRITO.get(),
@@ -114,21 +114,21 @@ public class LegumeDelightItemTags extends ItemTagsProvider {
 
 
 
-        this.tag(LegumeDelightTags.DIET_PROTEINS).add(
+        this.tag(LegumeDelightTags.Items.DIET_PROTEINS).add(
                 LegumeDelightItems.BEANS.get(),
                 LegumeDelightItems.PEANUTS.get()
-        ).addOptional(ResourceLocation.parse("culturaldelights:eggplant_parmesian"));;
+        ).addOptional(ResourceLocation.parse("culturaldelights:eggplant_parmesian"));
 
-        this.tag(LegumeDelightTags.DIET_GRAINS)
+        this.tag(LegumeDelightTags.Items.DIET_GRAINS)
                 .addOptional(ResourceLocation.parse("culturaldelights:corn_cob"))
                 .addOptional(ResourceLocation.parse("culturaldelights:corn_kernels"))
                 .addOptional(ResourceLocation.parse("culturaldelights:eggplant_parmesian"));
 
-        this.tag(LegumeDelightTags.DIET_VEGETABLES)
+        this.tag(LegumeDelightTags.Items.DIET_VEGETABLES)
                 .addOptional(ResourceLocation.parse("culturaldelights:eggplant_parmesian"));
 
         // This doesn't seem to take effect even though the data generates right. Maybe due to load orders? I'll leave it in just in case.
-        this.tag(LegumeDelightTags.DIET_VEGETABLES).remove(
+        this.tag(LegumeDelightTags.Items.DIET_VEGETABLES).remove(
                 Items.PUMPKIN_SEEDS,
                 Items.SUNFLOWER
         );

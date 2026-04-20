@@ -46,14 +46,14 @@ public class LegumeDelightBlockStates extends BlockStateProvider {
 
         this.customStageBlock(
                 LegumeDelightBlocks.BUDDING_BEAN_CROP.get(),
-                ResourceLocation.fromNamespaceAndPath("farmersdelight", "block/crop_cross"),
+                ResourceLocation.fromNamespaceAndPath("farmersdelight", "block/template_crop_cross"),
                 "cross",
                 BuddingBeanBlock.AGE,
                 Arrays.asList(0, 1, 2, 3, 3)
         );
         this.ropeLoggedVineBlock(
                 LegumeDelightBlocks.BEAN_CROP.get(),
-                ResourceLocation.fromNamespaceAndPath("farmersdelight", "block/crop_with_rope"),
+                ResourceLocation.fromNamespaceAndPath("farmersdelight", "block/template_crop_with_rope"),
                 "beans",
                 BeanVineBlock.VINE_AGE,
                 BeanVineBlock.ROPELOGGED,
@@ -63,7 +63,7 @@ public class LegumeDelightBlockStates extends BlockStateProvider {
         );
         this.customStageBlock(
                 LegumeDelightBlocks.PEANUT_CROP.get(),
-                ResourceLocation.fromNamespaceAndPath("farmersdelight", "block/crop_cross"),
+                ResourceLocation.fromNamespaceAndPath("farmersdelight", "block/template_crop_cross"),
                 "cross",
                 PeanutBlock.AGE,
                 Arrays.asList(0, 1, 2, 3, 4, 5, 6, 7)
@@ -143,7 +143,7 @@ public class LegumeDelightBlockStates extends BlockStateProvider {
                     } else {
                         return ConfiguredModel.builder()
                                 .modelFile(models()
-                                        .singleTexture(textureName, ResourceLocation.parse("farmersdelight:block/crop_cross"), "cross", resourceBlock(modelName))
+                                        .singleTexture(textureName, ResourceLocation.parse("farmersdelight:block/template_crop_cross"), "cross", resourceBlock(modelName))
                                         .renderType("cutout"))
                                 .build();
                     }

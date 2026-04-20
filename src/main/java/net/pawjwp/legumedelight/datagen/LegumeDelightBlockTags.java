@@ -48,11 +48,11 @@ public class LegumeDelightBlockTags extends BlockTagsProvider {
         );
 
         // Forge Tags
-        this.tag(LegumeDelightTags.STORAGE_BLOCKS_BLOCK_BEAN).add(LegumeDelightBlocks.BEAN_SACK.get());
-        this.tag(LegumeDelightTags.STORAGE_BLOCKS_BLOCK_PEANUT).add(LegumeDelightBlocks.PEANUT_SACK.get());
+        this.tag(LegumeDelightTags.Blocks.STORAGE_BLOCKS_BLOCK_BEAN).add(LegumeDelightBlocks.BEAN_SACK.get());
+        this.tag(LegumeDelightTags.Blocks.STORAGE_BLOCKS_BLOCK_PEANUT).add(LegumeDelightBlocks.PEANUT_SACK.get());
 
         // Farmer's Delight Tags
-        this.tag(ModTags.WILD_CROPS).add(
+        this.tag(ModTags.Blocks.WILD_CROPS).add(
                 LegumeDelightBlocks.WILD_BEANS.get(),
                 LegumeDelightBlocks.WILD_PEANUTS.get()
         );
