@@ -92,6 +92,16 @@ public class LegumeDelightItemTags extends ItemTagsProvider {
                 //LegumeDelightItems.POTATO_TACO.get()
         );
 
+        this.tag(ModTags.Items.SWEETS).add(
+                LegumeDelightItems.CANDIED_PEANUTS.get(),
+                LegumeDelightItems.MOONCAKE.get(),
+                LegumeDelightItems.PEANUT_BAR.get(),
+                LegumeDelightItems.PEANUT_BUTTER_COOKIE.get(),
+                LegumeDelightItems.PEANUT_BUTTER_CUP.get(),
+                LegumeDelightItems.RICE_CAKE.get(),
+                LegumeDelightItems.TRAIL_MIX.get()
+        );
+
         // Compatibility Tags
         this.tag(CompatibilityTags.CREATE_UPRIGHT_ON_BELT).add(
                 LegumeDelightItems.BEAN_PASTE.get(),
