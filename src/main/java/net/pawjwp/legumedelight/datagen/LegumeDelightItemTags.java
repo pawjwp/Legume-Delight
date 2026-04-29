@@ -83,7 +83,6 @@ public class LegumeDelightItemTags extends ItemTagsProvider {
                 LegumeDelightItems.BEAN_BURGER.get(),
                 LegumeDelightItems.BEAN_BURRITO.get(),
                 LegumeDelightItems.BEANS_AND_RICE.get(),
-                LegumeDelightItems.BEANS_ON_TOAST.get(),
                 LegumeDelightItems.CHILI.get(),
                 //LegumeDelightItems.NACHOS.get(),
                 LegumeDelightItems.PAD_THAI.get(),
@@ -92,14 +91,19 @@ public class LegumeDelightItemTags extends ItemTagsProvider {
                 //LegumeDelightItems.POTATO_TACO.get()
         );
 
+        this.tag(ModTags.Items.SNACKS).add(
+                LegumeDelightItems.BEANS_ON_TOAST.get(),
+                LegumeDelightItems.ROASTED_PEANUTS.get(),
+                LegumeDelightItems.TRAIL_MIX.get()
+        );
+
         this.tag(ModTags.Items.SWEETS).add(
                 LegumeDelightItems.CANDIED_PEANUTS.get(),
                 LegumeDelightItems.MOONCAKE.get(),
                 LegumeDelightItems.PEANUT_BAR.get(),
                 LegumeDelightItems.PEANUT_BUTTER_COOKIE.get(),
                 LegumeDelightItems.PEANUT_BUTTER_CUP.get(),
-                LegumeDelightItems.RICE_CAKE.get(),
-                LegumeDelightItems.TRAIL_MIX.get()
+                LegumeDelightItems.RICE_CAKE.get()
         );
 
         // Compatibility Tags
