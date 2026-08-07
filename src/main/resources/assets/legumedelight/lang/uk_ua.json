@@ -1,0 +1,35 @@
+{
+  "block.legumedelight.wild_beans": "Дика квасоля",
+  "block.legumedelight.wild_peanuts": "Дикий арахіс",
+  "block.legumedelight.bean_sack": "Мішок квасолі",
+  "block.legumedelight.peanut_sack": "Мішок арахісу",
+  
+  "block.legumedelight.beans_on_rope": "Квасоля на мотузці",
+
+  "item.legumedelight.beans": "Квасоля",
+  "item.legumedelight.peanuts": "Арахіс",
+
+  "item.legumedelight.bean_paste": "Бобова паста",
+  "item.legumedelight.bean_patty": "Бобова котлета",
+  "item.legumedelight.peanut_butter": "Арахісове масло",
+  "item.legumedelight.refried_beans": "Пересмажена квасоля",
+  "item.legumedelight.roasted_peanuts": "Смажений арахіс",
+  "item.legumedelight.candied_peanuts": "Карамелізований арахіс",
+  "item.legumedelight.mooncake": "Мункейк",
+  "item.legumedelight.peanut_bar": "Арахісовий батончик",
+  "item.legumedelight.peanut_butter_cookie": "Печиво з арахісовим маслом",
+  "item.legumedelight.peanut_butter_cup": "Кошик з арахісовим маслом",
+  "item.legumedelight.rice_cake": "Рисове тістечко",
+  "item.legumedelight.trail_mix": "Трейл-мікс",
+  "item.legumedelight.bean_burger": "Бобовий бургер",
+  "item.legumedelight.bean_burrito": "Буріто з квасолею",
+  "item.legumedelight.beans_on_toast": "Квасоля на тості",
+  "item.legumedelight.nachos": "Начос",
+  "item.legumedelight.peanut_butter_and_jam_sandwich": "Сендвіч з арахісовим маслом та джемом",
+  "item.legumedelight.potato_taco": "Тако з картоплею",
+  "item.legumedelight.baked_beans": "Запечена квасоля",
+  "item.legumedelight.beans_and_rice": "Квасоля з рисом",
+  "item.legumedelight.chili": "Чилі",
+  "item.legumedelight.pad_thai": "Пад-тай",
+  "item.legumedelight.pasta_with_tomato_sauce": "Паста з томатним соусом"
+}
