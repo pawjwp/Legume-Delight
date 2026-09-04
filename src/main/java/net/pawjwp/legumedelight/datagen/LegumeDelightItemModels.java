@@ -1,13 +1,13 @@
 package net.pawjwp.legumedelight.datagen;
 
 import com.google.common.collect.Sets;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
-import net.minecraftforge.client.model.generators.ItemModelProvider;
-import net.minecraftforge.common.data.ExistingFileHelper;
-import net.minecraftforge.registries.ForgeRegistries;
+import net.neoforged.neoforge.client.model.generators.ItemModelProvider;
+import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.pawjwp.legumedelight.LegumeDelight;
 import net.pawjwp.legumedelight.item.LegumeDelightItems;
 
@@ -25,7 +25,7 @@ public class LegumeDelightItemModels extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
-        Set<Item> items = ForgeRegistries.ITEMS.getValues().stream().filter(i -> LegumeDelight.MOD_ID.equals(ForgeRegistries.ITEMS.getKey(i).getNamespace()))
+        Set<Item> items = BuiltInRegistries.ITEM.stream().filter(i -> LegumeDelight.MOD_ID.equals(BuiltInRegistries.ITEM.getKey(i).getNamespace()))
                 .collect(Collectors.toSet());
 
         // If needed in the future, exclude specific items here
@@ -52,7 +52,7 @@ public class LegumeDelightItemModels extends ItemModelProvider {
     }
 
     private String itemName(Item item) {
-        return ForgeRegistries.ITEMS.getKey(item).getPath();
+        return BuiltInRegistries.ITEM.getKey(item).getPath();
     }
 
     public void blockBasedModel(Item item, String suffix) {

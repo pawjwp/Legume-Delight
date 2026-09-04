@@ -7,7 +7,8 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
-import net.minecraftforge.common.data.ExistingFileHelper;
+import net.neoforged.neoforge.common.Tags;
+import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.pawjwp.legumedelight.LegumeDelight;
 import net.pawjwp.legumedelight.item.LegumeDelightItems;
 import net.pawjwp.legumedelight.tag.LegumeDelightTags;
@@ -32,8 +33,8 @@ public class LegumeDelightItemTags extends ItemTagsProvider {
                 LegumeDelightItems.PEANUTS.get()
         );
 
-        // Forge Tags
-        this.tag(CommonTags.Items.CROPS).add(
+        // Common Tags
+        this.tag(Tags.Items.CROPS).add(
                 LegumeDelightItems.BEANS.get(),
                 LegumeDelightItems.PEANUTS.get()
         );
@@ -65,13 +66,13 @@ public class LegumeDelightItemTags extends ItemTagsProvider {
         this.tag(LegumeDelightTags.Items.NUT_BUTTER).add(LegumeDelightItems.PEANUT_BUTTER.get());
         this.tag(LegumeDelightTags.Items.PEANUT_BUTTER).add(LegumeDelightItems.PEANUT_BUTTER.get());
 
-        this.tag(CommonTags.Items.BERRIES); // establish tag exists before use
+        this.tag(Tags.Items.FOODS_BERRY); // establish tag exists before use
         this.tag(LegumeDelightTags.Items.FRUITS).add(
                 Items.APPLE,
                 Items.MELON_SLICE,
                 Items.CHORUS_FRUIT
         ).addTag(
-                CommonTags.Items.BERRIES
+                Tags.Items.FOODS_BERRY
         );
 
         this.tag(LegumeDelightTags.Items.STORAGE_BLOCKS_ITEM_BEAN).add(LegumeDelightItems.BEAN_SACK.get());

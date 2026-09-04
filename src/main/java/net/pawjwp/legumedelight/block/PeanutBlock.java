@@ -27,11 +27,6 @@ public class PeanutBlock extends CropBlock {
     }
 
     @Override
-    public BlockState getPlant(BlockGetter world, BlockPos pos) {
-        return LegumeDelightBlocks.PEANUT_CROP.get().defaultBlockState();
-    }
-
-    @Override
     protected ItemLike getBaseSeedId() {
         return LegumeDelightItems.PEANUTS.get();
     }

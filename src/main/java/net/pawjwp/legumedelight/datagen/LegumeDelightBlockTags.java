@@ -2,8 +2,8 @@ package net.pawjwp.legumedelight.datagen;
 
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
-import net.minecraftforge.common.data.BlockTagsProvider;
-import net.minecraftforge.common.data.ExistingFileHelper;
+import net.neoforged.neoforge.common.data.BlockTagsProvider;
+import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.pawjwp.legumedelight.LegumeDelight;
 import net.pawjwp.legumedelight.tag.LegumeDelightTags;
 import org.jetbrains.annotations.Nullable;
@@ -49,7 +49,7 @@ public class LegumeDelightBlockTags extends BlockTagsProvider {
                 LegumeDelightBlocks.PEANUT_CROP.get()
         );
 
-        // Forge Tags
+        // Common Tags
         this.tag(LegumeDelightTags.Blocks.STORAGE_BLOCKS_BLOCK_BEAN).add(LegumeDelightBlocks.BEAN_SACK.get());
         this.tag(LegumeDelightTags.Blocks.STORAGE_BLOCKS_BLOCK_PEANUT).add(LegumeDelightBlocks.PEANUT_SACK.get());
 

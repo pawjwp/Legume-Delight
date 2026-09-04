@@ -20,11 +20,6 @@ public class BuddingBeanBlock extends BuddingBushBlock implements BonemealableBl
     }
 
     @Override
-    public BlockState getPlant(BlockGetter world, BlockPos pos) {
-        return LegumeDelightBlocks.BUDDING_BEAN_CROP.get().defaultBlockState();
-    }
-
-    @Override
     protected boolean mayPlaceOn(BlockState pState, BlockGetter pLevel, BlockPos pPos) {
         return pState.is(ModBlocks.RICH_SOIL_FARMLAND.get()) || pState.is(Blocks.FARMLAND);
     }
@@ -48,7 +43,7 @@ public class BuddingBeanBlock extends BuddingBushBlock implements BonemealableBl
     }
 
     @Override
-    public boolean isValidBonemealTarget(LevelReader level, BlockPos pos, BlockState state, boolean isClient) {
+    public boolean isValidBonemealTarget(LevelReader level, BlockPos pos, BlockState state) {
         return true;
     }
 

@@ -2,6 +2,7 @@ package net.pawjwp.legumedelight.block;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.RandomSource;
@@ -11,7 +12,6 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.material.FluidState;
-import net.minecraftforge.registries.ForgeRegistries;
 import vectorwing.farmersdelight.common.Configuration;
 import vectorwing.farmersdelight.common.block.RopeBlock;
 import vectorwing.farmersdelight.common.registry.ModBlocks;
@@ -45,7 +45,7 @@ public class HangingBeanBlock extends BeanVineBlock
     }
 
     public static boolean placeRope(Level level, BlockPos pos) {
-        Block configuredRopeBlock = ForgeRegistries.BLOCKS.getValue(ResourceLocation.parse(Configuration.DEFAULT_TOMATO_VINE_ROPE.get()));
+        Block configuredRopeBlock = BuiltInRegistries.BLOCK.get(ResourceLocation.parse(Configuration.DEFAULT_TOMATO_VINE_ROPE.get()));
         if (configuredRopeBlock == null) {
             configuredRopeBlock = ModBlocks.ROPE.get();
         }
