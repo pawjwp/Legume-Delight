@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_peanuts": {
+      "conditions": {
+        "items": [
+          {
+            "items": "legumedelight:peanuts"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "legumedelight:cooking/candied_peanuts"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_peanuts"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "legumedelight:cooking/candied_peanuts"
+    ]
+  }
+}

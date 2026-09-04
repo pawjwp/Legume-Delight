@@ -1,0 +1,13 @@
+{
+  "type": "farmersdelight:cooking",
+  "experience": 0.35,
+  "ingredients": [
+    {
+      "tag": "c:crops/bean"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "legumedelight:refried_beans"
+  }
+}

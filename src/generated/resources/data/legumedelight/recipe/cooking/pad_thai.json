@@ -1,0 +1,23 @@
+{
+  "type": "farmersdelight:cooking",
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "tag": "c:foods/pasta"
+    },
+    {
+      "tag": "c:eggs"
+    },
+    {
+      "tag": "c:peanut_butter"
+    },
+    {
+      "item": "minecraft:dried_kelp"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "count": 1,
+    "id": "legumedelight:pad_thai"
+  }
+}

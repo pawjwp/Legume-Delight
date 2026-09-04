@@ -1,0 +1,31 @@
+{
+  "type": "farmersdelight:cooking",
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "tag": "c:crops/bean"
+    },
+    {
+      "tag": "c:crops/bean"
+    },
+    {
+      "item": "farmersdelight:tomato_sauce"
+    },
+    {
+      "type": "neoforge:compound",
+      "children": [
+        {
+          "item": "minecraft:sugar"
+        },
+        {
+          "item": "minecraft:honey_bottle"
+        }
+      ]
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "count": 1,
+    "id": "legumedelight:baked_beans"
+  }
+}

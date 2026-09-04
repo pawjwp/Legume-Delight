@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "tag": "c:foods/bread"
+    },
+    {
+      "item": "legumedelight:baked_beans"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "id": "legumedelight:beans_on_toast"
+  }
+}

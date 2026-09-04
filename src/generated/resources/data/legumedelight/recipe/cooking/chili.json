@@ -1,0 +1,29 @@
+{
+  "type": "farmersdelight:cooking",
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "tag": "c:crops/bean"
+    },
+    {
+      "tag": "c:crops/bean"
+    },
+    {
+      "tag": "c:crops/bean"
+    },
+    {
+      "tag": "c:crops/onion"
+    },
+    {
+      "item": "farmersdelight:tomato_sauce"
+    },
+    {
+      "tag": "c:crops/tomato"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "count": 1,
+    "id": "legumedelight:chili"
+  }
+}

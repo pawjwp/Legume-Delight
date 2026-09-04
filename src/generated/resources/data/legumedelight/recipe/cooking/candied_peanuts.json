@@ -1,0 +1,32 @@
+{
+  "type": "farmersdelight:cooking",
+  "experience": 0.35,
+  "ingredients": [
+    {
+      "type": "neoforge:compound",
+      "children": [
+        {
+          "tag": "c:nuts/peanut"
+        },
+        {
+          "item": "legumedelight:roasted_peanuts"
+        }
+      ]
+    },
+    {
+      "type": "neoforge:compound",
+      "children": [
+        {
+          "item": "minecraft:sugar"
+        },
+        {
+          "item": "minecraft:honey_bottle"
+        }
+      ]
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "legumedelight:candied_peanuts"
+  }
+}

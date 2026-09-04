@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "tag": "c:bean_paste"
+    },
+    {
+      "tag": "c:bean_paste"
+    },
+    {
+      "tag": "c:eggs"
+    },
+    {
+      "item": "farmersdelight:pie_crust"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "id": "legumedelight:mooncake"
+  }
+}

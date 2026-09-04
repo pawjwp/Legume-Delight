@@ -1,0 +1,19 @@
+{
+  "type": "farmersdelight:cooking",
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "tag": "c:crops/bean"
+    },
+    {
+      "tag": "c:crops/bean"
+    },
+    {
+      "item": "minecraft:wheat"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "legumedelight:bean_patty"
+  }
+}

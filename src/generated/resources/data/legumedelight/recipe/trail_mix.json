@@ -1,0 +1,61 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    [
+      {
+        "tag": "c:nuts"
+      },
+      {
+        "type": "neoforge:compound",
+        "children": [
+          {
+            "item": "legumedelight:roasted_peanuts"
+          },
+          {
+            "item": "legumedelight:candied_peanuts"
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "tag": "c:nuts"
+      },
+      {
+        "type": "neoforge:compound",
+        "children": [
+          {
+            "item": "legumedelight:roasted_peanuts"
+          },
+          {
+            "item": "legumedelight:candied_peanuts"
+          }
+        ]
+      }
+    ],
+    {
+      "tag": "c:foods/berry"
+    },
+    [
+      {
+        "tag": "c:seeds/pumpkin"
+      },
+      {
+        "type": "neoforge:compound",
+        "children": [
+          {
+            "item": "minecraft:sunflower"
+          },
+          {
+            "item": "minecraft:cocoa_beans"
+          }
+        ]
+      }
+    ]
+  ],
+  "result": {
+    "count": 2,
+    "id": "legumedelight:trail_mix"
+  }
+}

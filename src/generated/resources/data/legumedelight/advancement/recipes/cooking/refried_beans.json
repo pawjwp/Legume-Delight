@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "legumedelight:cooking/refried_beans"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "hsa_beans": {
+      "conditions": {
+        "items": [
+          {
+            "items": "legumedelight:beans"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "hsa_beans"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "legumedelight:cooking/refried_beans"
+    ]
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "type": "farmersdelight:cooking",
+  "experience": 0.35,
+  "ingredients": [
+    {
+      "type": "neoforge:compound",
+      "children": [
+        {
+          "tag": "c:nuts/peanut"
+        },
+        {
+          "item": "legumedelight:roasted_peanuts"
+        }
+      ]
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "legumedelight:peanut_butter"
+  }
+}
