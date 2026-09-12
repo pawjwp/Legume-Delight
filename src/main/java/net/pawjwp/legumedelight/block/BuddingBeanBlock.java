@@ -6,22 +6,15 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.*;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.BonemealableBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.pawjwp.legumedelight.item.LegumeDelightItems;
 import vectorwing.farmersdelight.common.block.BuddingBushBlock;
-import vectorwing.farmersdelight.common.registry.ModBlocks;
 
 public class BuddingBeanBlock extends BuddingBushBlock implements BonemealableBlock
 {
     public BuddingBeanBlock(Properties properties) {
         super(properties);
-    }
-
-    @Override
-    protected boolean mayPlaceOn(BlockState pState, BlockGetter pLevel, BlockPos pPos) {
-        return pState.is(ModBlocks.RICH_SOIL_FARMLAND.get()) || pState.is(Blocks.FARMLAND);
     }
 
     @Override
@@ -58,7 +51,7 @@ public class BuddingBeanBlock extends BuddingBushBlock implements BonemealableBl
 
     @Override
     protected ItemLike getBaseSeedId() {
-        return (ItemLike) LegumeDelightItems.BEANS.get();
+        return LegumeDelightItems.BEANS.get();
     }
 
     @Override
