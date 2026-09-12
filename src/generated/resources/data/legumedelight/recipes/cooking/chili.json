@@ -22,6 +22,7 @@
       "tag": "forge:crops/tomato"
     }
   ],
+  "recipe_book_tab": "meals",
   "result": {
     "item": "legumedelight:chili"
   }

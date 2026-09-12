@@ -110,6 +110,7 @@ public class LegumeDelightCookingRecipes {
                 .addIngredient(CommonTags.Items.CROPS_TOMATO)
                 .unlockedByAnyIngredient(LegumeDelightItems.BEANS.get(), ModItems.TOMATO_SAUCE.get(), ModItems.TOMATO.get(), ModItems.ONION.get())
                 .setNamespace(LegumeDelight.MOD_ID)
+                .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
                 .save(consumer);
 
         CookingPotRecipeBuilder.cookingPotRecipe(LegumeDelightItems.PAD_THAI.get(), 1, NORMAL_COOKING, MEDIUM_EXP)
