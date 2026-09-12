@@ -77,6 +77,16 @@ public class BeanVineBlock extends CropBlock
     }
 
     @Override
+    public void tick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
+        if (!state.canSurvive(level, pos)) {
+            level.destroyBlock(pos, true);
+            if (state.getValue(BeanVineBlock.ROPELOGGED)) {
+                destroyAndPlaceRope(level, pos);
+            }
+        }
+    }
+
+    @Override
     public void randomTick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
         if (!level.isAreaLoaded(pos, 1)) return;
 
@@ -97,32 +107,6 @@ public class BeanVineBlock extends CropBlock
                 }
             }
             climbRopeAbove(level, pos);
-        }
-    }
-
-    public boolean canClimbBlock(BlockState stateAbove) {
-        return Configuration.ENABLE_TOMATO_VINE_CLIMBING_TAGGED_ROPES.get() ? stateAbove.is(ModTags.Blocks.ROPES) : stateAbove.is(ModBlocks.ROPE.get());
-    }
-
-    @Nullable
-    public BlockState getClimbingState(BlockState stateAbove) {
-        if (this.canClimbBlock(stateAbove)) {
-            return LegumeDelightBlocks.BEAN_CROP_ON_ROPE.get().defaultBlockState();
-        }
-        return null;
-    }
-
-    public void climbRopeAbove(ServerLevel level, BlockPos pos) {
-        BlockPos posAbove = pos.above();
-        BlockState stateAbove = level.getBlockState(posAbove);
-        BlockState climbingState = getClimbingState(stateAbove);
-        if (climbingState != null) {
-            int vineHeight;
-            for (vineHeight = 1; level.getBlockState(pos.below(vineHeight)).is(this); ++vineHeight) {
-            }
-            if (vineHeight < 3) {
-                level.setBlockAndUpdate(posAbove, climbingState);
-            }
         }
     }
 
@@ -154,6 +138,32 @@ public class BeanVineBlock extends CropBlock
     @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
         builder.add(VINE_AGE, ROPELOGGED);
+    }
+
+    public boolean canClimbBlock(BlockState stateAbove) {
+        return Configuration.ENABLE_TOMATO_VINE_CLIMBING_TAGGED_ROPES.get() ? stateAbove.is(ModTags.Blocks.ROPES) : stateAbove.is(ModBlocks.ROPE.get());
+    }
+
+    @Nullable
+    public BlockState getClimbingState(BlockState stateAbove) {
+        if (this.canClimbBlock(stateAbove)) {
+            return LegumeDelightBlocks.BEAN_CROP_ON_ROPE.get().defaultBlockState();
+        }
+        return null;
+    }
+
+    public void climbRopeAbove(ServerLevel level, BlockPos pos) {
+        BlockPos posAbove = pos.above();
+        BlockState stateAbove = level.getBlockState(posAbove);
+        BlockState climbingState = getClimbingState(stateAbove);
+        if (climbingState != null) {
+            int vineHeight;
+            for (vineHeight = 1; level.getBlockState(pos.below(vineHeight)).is(this); ++vineHeight) {
+            }
+            if (vineHeight < 3) {
+                level.setBlockAndUpdate(posAbove, climbingState);
+            }
+        }
     }
 
     @Override
@@ -225,6 +235,15 @@ public class BeanVineBlock extends CropBlock
         return level.getRawBrightness(pos, 0) >= 8 || level.canSeeSky(pos);
     }
 
+    @Override
+    public BlockState updateShape(BlockState state, Direction facing, BlockState facingState, LevelAccessor level, BlockPos currentPos, BlockPos facingPos) {
+        if (!state.canSurvive(level, currentPos)) {
+            level.scheduleTick(currentPos, this, 1);
+        }
+
+        return state;
+    }
+
     @Deprecated(forRemoval = true)
     @Override
     public void playerDestroy(Level level, Player player, BlockPos pos, BlockState state, @Nullable BlockEntity blockEntity, ItemStack stack) {
@@ -235,15 +254,6 @@ public class BeanVineBlock extends CropBlock
         }
     }
 
-    @Override
-    public BlockState updateShape(BlockState state, Direction facing, BlockState facingState, LevelAccessor level, BlockPos currentPos, BlockPos facingPos) {
-        if (!state.canSurvive(level, currentPos)) {
-            level.scheduleTick(currentPos, this, 1);
-        }
-
-        return state;
-    }
-
     /**
      * Deprecated - This block will no longer use its ropelogged state. Refer to HangingBeanBlock instead.
      */
@@ -252,15 +262,5 @@ public class BeanVineBlock extends CropBlock
         Block configuredRopeBlock = BuiltInRegistries.BLOCK.get(ResourceLocation.parse(Configuration.DEFAULT_TOMATO_VINE_ROPE.get()));
         Block finalRopeBlock = configuredRopeBlock != null ? configuredRopeBlock : ModBlocks.ROPE.get();
         level.setBlockAndUpdate(pos, finalRopeBlock.defaultBlockState());
-    }
-
-    @Override
-    public void tick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
-        if (!state.canSurvive(level, pos)) {
-            level.destroyBlock(pos, true);
-            if (state.getValue(BeanVineBlock.ROPELOGGED)) {
-                destroyAndPlaceRope(level, pos);
-            }
-        }
     }
 }
