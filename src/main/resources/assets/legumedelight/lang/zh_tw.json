@@ -1,0 +1,35 @@
+{
+  "block.legumedelight.wild_beans": "野生豆子",
+  "block.legumedelight.wild_peanuts": "野生花生",
+  "block.legumedelight.bean_sack": "豆子袋",
+  "block.legumedelight.peanut_sack": "花生袋",
+  
+  "block.legumedelight.beans_on_rope": "繩索上的豆子",
+
+  "item.legumedelight.beans": "豆子",
+  "item.legumedelight.peanuts": "花生",
+
+  "item.legumedelight.bean_paste": "豆沙",
+  "item.legumedelight.bean_patty": "豆排",
+  "item.legumedelight.peanut_butter": "花生醬",
+  "item.legumedelight.refried_beans": "炒豆泥",
+  "item.legumedelight.roasted_peanuts": "烤花生",
+  "item.legumedelight.candied_peanuts": "蜜花生",
+  "item.legumedelight.mooncake": "月餅",
+  "item.legumedelight.peanut_bar": "花生巧克力棒",
+  "item.legumedelight.peanut_butter_cookie": "花生醬餅乾",
+  "item.legumedelight.peanut_butter_cup": "花生醬巧克力杯",
+  "item.legumedelight.rice_cake": "甜米糕",
+  "item.legumedelight.trail_mix": "綜合堅果",
+  "item.legumedelight.bean_burger": "豆豆漢堡",
+  "item.legumedelight.bean_burrito": "豆子捲餅",
+  "item.legumedelight.beans_on_toast": "焗豆吐司",
+  "item.legumedelight.nachos": "烤起司辣味玉米片",
+  "item.legumedelight.peanut_butter_and_jam_sandwich": "花生果醬三明治",
+  "item.legumedelight.potato_taco": "馬鈴薯塔可",
+  "item.legumedelight.baked_beans": "焗豆",
+  "item.legumedelight.beans_and_rice": "豆子飯",
+  "item.legumedelight.chili": "素辣肉醬",
+  "item.legumedelight.pad_thai": "泰式炒河粉",
+  "item.legumedelight.pasta_with_tomato_sauce": "紅醬義大利麵"
+}
